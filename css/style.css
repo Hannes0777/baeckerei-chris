@@ -481,6 +481,106 @@ section { padding: 0; }
 .value-note h4 { font-size: 1.05rem; color: var(--green); margin-bottom: 6px; }
 .value-note p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
 
+/* ============ Bread wheel (rotating showcase) ============ */
+.bread-wheel-section { padding: 96px 0 72px; text-align: center; overflow: hidden; }
+.bread-wheel {
+  position: relative;
+  width: min(480px, 82vw);
+  height: min(480px, 82vw);
+  margin: 56px auto 0;
+}
+.bread-wheel__hub {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  padding: 10%;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+}
+.bread-wheel__ring {
+  position: absolute;
+  inset: 0;
+  animation: wheel-spin 50s linear infinite;
+}
+.bread-wheel__item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 23%;
+  height: 23%;
+  margin: -11.5%;
+  transform: rotate(var(--angle)) translate(calc(min(480px, 82vw) * 0.38)) rotate(calc(-1 * var(--angle)));
+}
+.bread-wheel__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--cream);
+  box-shadow: var(--shadow-sm);
+  animation: wheel-spin-reverse 50s linear infinite;
+  background: var(--green-dark);
+}
+.bread-wheel__photo img { width: 100%; height: 100%; object-fit: cover; }
+.bread-wheel__label {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  white-space: nowrap;
+  color: var(--text-light);
+  animation: wheel-spin-reverse 50s linear infinite;
+}
+@keyframes wheel-spin { to { transform: rotate(360deg); } }
+@keyframes wheel-spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .bread-wheel__ring, .bread-wheel__photo, .bread-wheel__label { animation: none; }
+}
+@media (max-width: 620px) {
+  .bread-wheel__label { display: none; }
+}
+
+/* ============ Marquee (auto-scrolling photo strip) ============ */
+.marquee { overflow: hidden; padding: 4px 0; }
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 4px;
+  animation: marquee-scroll 38s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__frame { position: relative; flex-shrink: 0; width: 260px; aspect-ratio: 4/5; overflow: hidden; }
+.marquee__frame.photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.5) sepia(0.15); transition: filter var(--transition); }
+.marquee:hover .marquee__frame.photo img { filter: grayscale(0) sepia(0); }
+.marquee__frame.product { width: 190px; background: var(--cream); display: flex; align-items: center; justify-content: center; }
+.marquee__frame.product .marquee__product-photo { width: 66%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-sm); }
+.marquee__frame.product .marquee__product-photo img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}
+
+/* ============ Menu photo group (isolated product crops beside a category) ============ */
+.menu-photo-group { display: flex; flex-wrap: wrap; gap: 12px; width: 180px; flex-shrink: 0; align-content: flex-start; }
+.menu-photo { width: 78px; height: 78px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid var(--cream); box-shadow: var(--shadow-sm); }
+.on-dark .menu-photo { border-color: var(--green-dark); }
+.menu-photo img { width: 100%; height: 100%; object-fit: cover; }
+
 /* ============ Two-column utility (Standorte/Kontakt detail rows) ============ */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
