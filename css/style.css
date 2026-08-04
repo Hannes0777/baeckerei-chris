@@ -18,7 +18,7 @@
   --text-on-dark: #f4f1e8;
   --text-on-dark-light: #b9c2b3;
 
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-display: 'Newsreader', Georgia, serif;
   --font-sans: 'Work Sans', Arial, sans-serif;
   --font-mono: 'Space Mono', 'Courier New', monospace;
 
@@ -155,7 +155,7 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 860px) {
   .nav-toggle { display: block; }
   /* backdrop-filter on an ancestor makes it the containing block for
-     position:fixed descendants — kills the full-viewport mobile panel below */
+     position:fixed descendants, which kills the full-viewport mobile panel below */
   .site-nav { backdrop-filter: none; background: rgba(244, 241, 232, 0.98); }
   .nav-links {
     position: fixed;
@@ -433,20 +433,7 @@ section { padding: 0; }
 .quote-break__meta { margin-top: 32px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-on-dark-light); }
 .quote-break__meta a { border-bottom: 1px solid var(--gold-light); color: var(--gold-light); padding-bottom: 2px; }
 
-/* ============ Social filmstrip ============ */
-.filmstrip-section { background: var(--steel); color: var(--text-on-dark); padding: 96px 0; }
-.filmstrip-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
-.filmstrip-head h2 { color: var(--white); font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
-.filmstrip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-@media (max-width: 760px) { .filmstrip { grid-template-columns: repeat(2, 1fr); } }
-.filmstrip__frame { position: relative; aspect-ratio: 3/4; overflow: hidden; }
-.filmstrip__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition), filter var(--transition); filter: grayscale(0.35); }
-.filmstrip__frame:hover img { transform: scale(1.04); filter: grayscale(0); }
-.filmstrip__num {
-  position: absolute; top: 12px; left: 12px; z-index: 1;
-  font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-on-dark);
-  background: rgba(20,18,16,0.55); padding: 3px 7px;
-}
+/* ============ Social follow strip ============ */
 .social-follow {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
   margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(244,241,232,0.15);
@@ -481,105 +468,44 @@ section { padding: 0; }
 .value-note h4 { font-size: 1.05rem; color: var(--green); margin-bottom: 6px; }
 .value-note p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
 
-/* ============ Bread wheel (rotating showcase) ============ */
-.bread-wheel-section { padding: 96px 0 72px; text-align: center; overflow: hidden; }
-.bread-wheel {
-  position: relative;
-  width: min(480px, 82vw);
-  height: min(480px, 82vw);
-  margin: 56px auto 0;
-}
-.bread-wheel__hub {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 34%;
-  height: 34%;
-  border-radius: 50%;
-  background: var(--green);
-  color: var(--text-on-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  line-height: 1.4;
-  letter-spacing: 0.03em;
-  padding: 10%;
-  z-index: 2;
-  box-shadow: var(--shadow-md);
-}
-.bread-wheel__ring {
-  position: absolute;
-  inset: 0;
-  animation: wheel-spin 50s linear infinite;
-}
-.bread-wheel__item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 23%;
-  height: 23%;
-  margin: -11.5%;
-  transform: rotate(var(--angle)) translate(calc(min(480px, 82vw) * 0.38)) rotate(calc(-1 * var(--angle)));
-}
-.bread-wheel__photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--cream);
-  box-shadow: var(--shadow-sm);
-  animation: wheel-spin-reverse 50s linear infinite;
-  background: var(--green-dark);
-}
-.bread-wheel__photo img { width: 100%; height: 100%; object-fit: cover; }
-.bread-wheel__label {
-  position: absolute;
-  bottom: -26px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  white-space: nowrap;
-  color: var(--text-light);
-  animation: wheel-spin-reverse 50s linear infinite;
-}
-@keyframes wheel-spin { to { transform: rotate(360deg); } }
-@keyframes wheel-spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .bread-wheel__ring, .bread-wheel__photo, .bread-wheel__label { animation: none; }
-}
-@media (max-width: 620px) {
-  .bread-wheel__label { display: none; }
-}
-
-/* ============ Marquee (auto-scrolling photo strip) ============ */
+/* ============ Marquee (auto-scrolling photo strip, real photography only) ============ */
 .marquee { overflow: hidden; padding: 4px 0; }
 .marquee__track {
   display: flex;
   width: max-content;
   gap: 4px;
-  animation: marquee-scroll 38s linear infinite;
+  animation: marquee-scroll 34s linear infinite;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__frame { position: relative; flex-shrink: 0; width: 260px; aspect-ratio: 4/5; overflow: hidden; }
-.marquee__frame.photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.5) sepia(0.15); transition: filter var(--transition); }
-.marquee:hover .marquee__frame.photo img { filter: grayscale(0) sepia(0); }
-.marquee__frame.product { width: 190px; background: var(--cream); display: flex; align-items: center; justify-content: center; }
-.marquee__frame.product .marquee__product-photo { width: 66%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-sm); }
-.marquee__frame.product .marquee__product-photo img { width: 100%; height: 100%; object-fit: cover; }
+.marquee__frame { position: relative; flex-shrink: 0; width: 320px; aspect-ratio: 4/5; overflow: hidden; }
+.marquee__frame img { width: 100%; height: 100%; object-fit: cover; }
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
 }
 
-/* ============ Menu photo group (isolated product crops beside a category) ============ */
-.menu-photo-group { display: flex; flex-wrap: wrap; gap: 12px; width: 180px; flex-shrink: 0; align-content: flex-start; }
-.menu-photo { width: 78px; height: 78px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid var(--cream); box-shadow: var(--shadow-sm); }
-.on-dark .menu-photo { border-color: var(--green-dark); }
-.menu-photo img { width: 100%; height: 100%; object-fit: cover; }
+/* ============ Section-break photo (Pinchman's-style: image bleeds across two backgrounds) ============ */
+.break-photo {
+  position: relative;
+  z-index: 3;
+  margin: -56px auto -56px;
+  max-width: 1040px;
+  padding: 0 24px;
+}
+.break-photo__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+}
+.break-photo__grid img { width: 100%; height: 100%; object-fit: cover; box-shadow: var(--shadow-md); }
+.break-photo__tall { aspect-ratio: 3/4; }
+.break-photo__pair { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
+.break-photo__pair img { aspect-ratio: 16/10; }
+@media (max-width: 760px) {
+  .break-photo { margin: -32px auto -48px; }
+  .break-photo__grid { grid-template-columns: 1fr; }
+  .break-photo__pair { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+}
 
 /* ============ Two-column utility (Standorte/Kontakt detail rows) ============ */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
