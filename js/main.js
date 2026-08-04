@@ -19,13 +19,13 @@
     });
   }
 
-  var revealTargets = document.querySelectorAll('.reveal, .stamp-badge');
+  var revealTargets = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealTargets.length) {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add(entry.target.classList.contains('stamp-badge') ? 'reveal' : 'is-visible');
+            entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
         });
@@ -34,6 +34,6 @@
     );
     revealTargets.forEach(function (el) { observer.observe(el); });
   } else {
-    revealTargets.forEach(function (el) { el.classList.add('is-visible', 'reveal'); });
+    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
   }
 })();
