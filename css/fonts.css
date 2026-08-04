@@ -1,0 +1,37 @@
+/*
+  Selbst gehostete Schriften (DSGVO: keine Google-Fonts-CDN-Anfragen zur Laufzeit).
+  Fraunces und Work Sans sind Variable Fonts (ein File deckt den kompletten
+  Schnittbereich ab); Space Mono existiert bei Google nur als zwei statische Schnitte.
+*/
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('../assets/fonts/work-sans-variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/space-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/space-mono-700.woff2') format('woff2');
+}
