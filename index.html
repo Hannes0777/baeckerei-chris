@@ -15,19 +15,27 @@
 <div class="pitch-banner">🥐 <strong>Pitch-Vorschau</strong> für Bäcker Chris: unverbindlicher Entwurf, noch nicht die offizielle Website</div>
 
 <header class="site-nav">
-  <div class="container">
-    <a class="brand" href="index.html">
-      <img src="assets/images/logo.webp" alt="" width="34" height="34">
-      Bäcker Chris
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html" aria-current="page">Start</a>
-      <a href="sortiment.html">Sortiment</a>
-      <a href="standorte.html">Standorte</a>
-      <a href="ueber-uns.html">Über uns</a>
-      <a href="kontakt.html" class="nav-cta">Kontakt</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <div class="nav-utility">
+    <div class="container nav-utility__inner">
+      <a href="tel:+4971839339144">07183 9339144</a>
+      <span>Welzheimer Str. 31 &amp; Bronnwiesenweg, Rudersberg</span>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.webp" alt="" width="34" height="34">
+        Bäcker Chris
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" aria-current="page">Start</a>
+        <a href="sortiment.html">Sortiment</a>
+        <a href="standorte.html">Standorte</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html" class="nav-cta">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -41,100 +49,118 @@
       </picture>
     </div>
     <div class="hero__grid">
-      <div class="hero__clock">
-        <span class="hero__clock-num">04:30</span>
-        <span class="hero__clock-label">Uhr, der Ofen ist schon an</span>
-      </div>
       <div class="hero__main">
         <h1>Zwei Orte.<br><em>Ein</em> Handwerk.</h1>
-      </div>
-      <div class="hero__foot">
         <p class="lede">Von der Backstube in der Welzheimer Straße bis zum neuen Café am Pflegecampus: Bäcker Chris backt seit 2023 nach einer einzigen Regel. Der Teig bekommt genügend Zeit.</p>
-        <div>
-          <div class="hero__facts">
-            <div><strong>4,3★</strong>Google, 77 Bew.</div>
-            <div><strong>2023</strong>Bäckerei eröffnet</div>
-            <div><strong>2026</strong>Café am Pflegecampus</div>
-          </div>
-          <div class="hero__actions">
-            <a class="btn btn-primary" href="sortiment.html">Sortiment entdecken</a>
-            <a class="btn btn-ghost" href="standorte.html">Beide Standorte</a>
-          </div>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="sortiment.html">Sortiment entdecken</a>
+          <a class="btn btn-ghost" href="standorte.html">Beide Standorte</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="day">
-    <article class="day__moment on-dark">
-      <div class="day__moment-inner">
-      <div class="day__time"><span class="day__time-num">04:30</span><span class="day__time-label">Vor dem ersten Licht</span></div>
-      <div class="day__body reveal">
-        <h2>Der Teig bekommt, was er braucht: Zeit.</h2>
-        <p>Während Rudersberg noch schläft, steht Chris Schiefer schon in der Backstube in der Welzheimer Straße. Kein Zeitdruck, keine Abkürzungen. Die lange, langsame Teigführung ist das eine Versprechen, das sich seit der Übernahme 2023 nie geändert hat.</p>
-        <p class="note-marginal">Übernommen von der Familie Lochmann, die den Betrieb zuvor drei Generationen lang geführt hat.</p>
-      </div>
-      </div>
-    </article>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
+      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
+    </div>
+  </div>
 
-    <div class="break-photo">
-      <div class="break-photo__grid">
-        <div class="break-photo__tall"><img src="assets/images/cafe-wolkenwand.webp" loading="lazy" alt="Sitzbereich im Café am Pflegecampus mit Wolken-Wandbild" width="1170" height="1558"></div>
-        <div class="break-photo__pair">
-          <img src="assets/images/cafe-kaminecke.webp" loading="lazy" alt="Kamin-Ecke mit goldenem Rippenpaneel im Café" width="1170" height="1558">
-          <img src="assets/images/cafe-glasfront.webp" loading="lazy" alt="Blick durch die Stahl-Glas-Trennwand ins Café" width="1170" height="1558">
+  <div class="break-photo">
+    <div class="break-photo__grid">
+      <img src="assets/images/cafe-kaminecke.webp" loading="lazy" alt="Kamin-Ecke mit goldenem Rippenpaneel im Café am Pflegecampus" width="1170" height="1558">
+      <img src="assets/images/cafe-glasfront.webp" loading="lazy" alt="Blick durch die Stahl-Glas-Trennwand ins Café am Pflegecampus" width="1170" height="1558">
+    </div>
+  </div>
+
+  <section style="padding:96px 0 24px;">
+    <div class="container" style="max-width:640px; text-align:center; margin-bottom:8px;">
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem); color:var(--green);">Eine kleine Vorstellungsrunde</h2>
+      <p style="color:var(--text-light); margin-top:12px;">Fünf Familien von Broten, die bei uns täglich aus dem Ofen kommen.</p>
+    </div>
+    <div class="container">
+
+      <div class="zigzag-row reveal">
+        <div class="zigzag-media"><img src="assets/images/kategorie-bauernland.webp" loading="lazy" alt="Landbrot, Hausbrot, Bauernbrot und Genetzes" width="480" height="853"></div>
+        <div class="zigzag-text">
+          <span class="zigzag-text__num">01</span>
+          <h3>Bauern- und Landbrote</h3>
+          <p>Rustikal, kräftig ausgebacken: Landbrot, Hausbrot, Bauernbrot und Genetzes, dazu das Roggenbauernbrot in 750 g und 1 kg. Lange Teigführung, kräftige Kruste.</p>
         </div>
+      </div>
+
+      <div class="zigzag-row reverse reveal">
+        <div class="zigzag-media"><img src="assets/images/kategorie-dinkel.webp" loading="lazy" alt="Dinkelvollkorn, Dinkel Gourmet und Dinkelbauern" width="480" height="853"></div>
+        <div class="zigzag-text">
+          <span class="zigzag-text__num">02</span>
+          <h3>Dinkelbrote</h3>
+          <p>Dinkelvollkorn, Dinkel Gourmet und Dinkelbauern, dazu Dunkles Dinkelvollkorn, Alpenlaib aus Dinkel Ruch Mehl und Buttermilch Laib. Für den vollen Geschmack.</p>
+        </div>
+      </div>
+
+      <div class="zigzag-row reveal">
+        <div class="zigzag-media"><img src="assets/images/kategorie-kernsaaten.webp" loading="lazy" alt="Emmer Urkorn und Saatenkracher" width="480" height="853"></div>
+        <div class="zigzag-text">
+          <span class="zigzag-text__num">03</span>
+          <h3>Kern- und Saatenbrote</h3>
+          <p>Der Saatenkracher mit Quellstück und reichlich Saaten ist unser Bestseller, dazu Emmer Urkorn, Dreikorn und Sechskorn. Kräftig, mit viel Biss.</p>
+        </div>
+      </div>
+
+      <div class="zigzag-row reverse reveal">
+        <div class="zigzag-media"><img src="assets/images/kategorie-spezial.webp" loading="lazy" alt="Sauerteigbrot, Protein Brot und Chiabatta" width="480" height="853"></div>
+        <div class="zigzag-text">
+          <span class="zigzag-text__num">04</span>
+          <h3>Spezialbrote</h3>
+          <p>Sauerteigbrot, Protein Brot und Chiabatta, für besondere Ansprüche.</p>
+        </div>
+      </div>
+
+      <div class="zigzag-row reveal">
+        <div class="zigzag-media"><img src="assets/images/kategorie-baguette.webp" loading="lazy" alt="Baguette Dinkel &amp; Weizen, Baguette Körner und Baguette Pfeffer" width="480" height="853"></div>
+        <div class="zigzag-text">
+          <span class="zigzag-text__num">05</span>
+          <h3>Baguettes</h3>
+          <p>Baguette Dinkel &amp; Weizen, Baguette Körner und Baguette Pfeffer, knusprig frisch gebacken. Dazu Brezeln, süße Teilchen und Kuchen im ganzen Sortiment.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="container" style="text-align:center; margin-top:24px;">
+      <a class="btn-text" href="sortiment.html">Ganzes Sortiment mit allen Sorten ansehen →</a>
+    </div>
+  </section>
+
+  <section class="handwerk-statement">
+    <div class="container handwerk-statement__grid">
+      <h2>„Der Teig bekommt, was er braucht: Zeit."</h2>
+      <div>
+        <p>Keine Abkürzungen, kein Zeitdruck: Seit der Übernahme durch Christian und Tina Schiefer 2023 backt Bäcker Chris nach diesem einen Grundsatz, den schon die Familie Lochmann drei Generationen lang gepflegt hat.</p>
+        <p>Lange Teigführung braucht Geduld, dafür schmeckt man sie in jeder Kruste. <a href="ueber-uns.html" style="color:var(--gold-light); border-bottom:1px solid var(--gold-light);">Mehr über unsere Geschichte</a></p>
       </div>
     </div>
+  </section>
 
-    <article class="day__moment">
-      <div class="day__moment-inner">
-      <div class="day__time"><span class="day__time-num">06:00</span><span class="day__time-label">Die Auslage öffnet</span></div>
-      <div class="day__body reveal">
-        <h2>Was heute frisch aus dem Ofen kommt</h2>
-        <div class="menu-list">
-          <div class="menu-row">
-            <span class="menu-row__name">Saatenkracher<span class="menu-row__tag">Bestseller</span></span>
-            <span class="menu-row__rule"></span>
-            <span class="menu-row__desc">Mit Quellstück und reichlich Saaten.</span>
-          </div>
-          <div class="menu-row">
-            <span class="menu-row__name">Sauerteigbrot</span>
-            <span class="menu-row__rule"></span>
-            <span class="menu-row__desc">Aus dem Spezialbrot-Sortiment.</span>
-          </div>
-          <div class="menu-row">
-            <span class="menu-row__name">Dreikorn &amp; Sechskorn</span>
-            <span class="menu-row__rule"></span>
-            <span class="menu-row__desc">Kräftig, mit viel Biss.</span>
-          </div>
-          <div class="menu-row">
-            <span class="menu-row__name">Butterbrezel</span>
-            <span class="menu-row__rule"></span>
-            <span class="menu-row__desc">Das Aushängeschild, klassisch schwäbisch gelaugt.</span>
-          </div>
+  <section style="padding:80px 0;">
+    <div class="container" style="max-width:900px;">
+      <div class="angebote-callout reveal">
+        <div>
+          <div class="angebote-callout__label">Diese Woche</div>
+          <h3>Aktuelle Angebote &amp; Saisongebäck</h3>
+          <p>Dieser Kasten ist bewusst leicht austauschbar gebaut, ideal für Wochenangebote und Saisongebäck wie die Neujahrsbrezel.</p>
         </div>
-        <p class="note-marginal">Über 15 Brotsorten, dazu Dinkelbrote, Baguettes und Saisongebäck wie die Neujahrsbrezel.</p>
-        <div style="margin-top:28px;"><a class="btn-text" href="sortiment.html">Ganzes Sortiment ansehen →</a></div>
+        <a class="btn btn-outline" href="sortiment.html">Ganzes Sortiment</a>
       </div>
-      </div>
-    </article>
-
-    <article class="day__moment">
-      <div class="day__moment-inner">
-      <div class="day__time"><span class="day__time-num">Vormittags</span><span class="day__time-label">Café am Pflegecampus</span></div>
-      <div class="day__body reveal">
-        <h2>Ein neuer, gemütlicher Treffpunkt</h2>
-        <p>Seit Mai 2026 gibt es einen zweiten Ort: das Café am Pflegecampus. Frühstück, Brunch und Mittagessen, bewusst als „Ort für alle" gedacht, mitten in der neuen Pflegeeinrichtung in Rudersberg.</p>
-        <div class="bento">
-          <div class="bento__lg"><img src="assets/images/cafe-kaminecke.webp" loading="lazy" alt="Kamin-Ecke mit goldenem Rippenpaneel im neuen Café am Pflegecampus" width="1170" height="1558"></div>
-          <div class="bento__sm"><img src="assets/images/cafe-glasfront.webp" loading="lazy" alt="Blick durch die schwarze Stahl-Glas-Trennwand ins Café" width="1170" height="1558"></div>
-          <div class="bento__sm"><img src="assets/images/cafe-sitzbereich-mural.webp" loading="lazy" alt="Sitzbereich mit botanischer Mural-Tapete im Café" width="1170" height="1558"></div>
-        </div>
-      </div>
-      </div>
-    </article>
-  </div>
+    </div>
+  </section>
 
   <section class="diptych" id="standorte">
     <div class="diptych__panel diptych__panel--dark on-dark">
@@ -167,20 +193,6 @@
     <blockquote>„Super Angebot, Super Qualität, alles in allem Tipp-Top."</blockquote>
     <div class="quote-break__meta">4,3 von 5 · 77 Google-Bewertungen · <a href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A4cker+Chris+Rudersberg" target="_blank" rel="noopener">alle Bewertungen ansehen</a></div>
   </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
-      <!-- duplicate for seamless loop -->
-      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
-    </div>
-  </div>
 
   <section id="social" style="background:var(--steel); color:var(--text-on-dark); padding:56px 0;">
     <div class="container">
