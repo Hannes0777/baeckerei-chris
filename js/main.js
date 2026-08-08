@@ -68,6 +68,23 @@
     updateTimeline();
   }
 
+  if (!reduceMotion) {
+    document.querySelectorAll('.btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var size = Math.max(rect.width, rect.height) * 1.5;
+        var ripple = document.createElement('span');
+        ripple.className = 'btn__ripple';
+        ripple.style.width = size + 'px';
+        ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left) + 'px';
+        ripple.style.top = (e.clientY - rect.top) + 'px';
+        btn.appendChild(ripple);
+        ripple.addEventListener('animationend', function () { ripple.remove(); });
+      });
+    });
+  }
+
   var revealTargets = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealTargets.length) {
     var observer = new IntersectionObserver(
