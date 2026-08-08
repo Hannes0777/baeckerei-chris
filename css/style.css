@@ -675,12 +675,40 @@ section { padding: 0; }
 .footer-bottom a:hover { color: var(--gold-light); }
 .footer-credit { opacity: 0.85; }
 
-/* ============ Generic subpage header ============ */
-.page-hero { background: var(--green-dark); color: var(--text-on-dark); padding: 116px 0 56px; }
+/* ============ Generic subpage header (Hero-Stil wie Startseite) ============ */
+.page-hero {
+  position: relative;
+  min-height: 54vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--text-on-dark);
+  padding: 140px 0 64px;
+  overflow: hidden;
+}
+.page-hero__bg { position: absolute; inset: 0; z-index: 0; }
+.page-hero__bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(3px); transform: scale(1.06); }
+.page-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(200deg, rgba(23,48,31,0.92) 10%, rgba(23,48,31,0.55) 55%, rgba(23,48,31,0.4) 100%);
+}
+.page-hero .container { position: relative; z-index: 1; }
 .page-hero .eyebrow { color: var(--gold-light); }
 .page-hero .eyebrow::before { background: var(--gold-light); }
-.page-hero h1 { font-size: clamp(2.5rem, 5.2vw, 3.7rem); color: var(--white); max-width: 20ch; }
-.page-hero p { margin-top: 16px; max-width: 60ch; color: var(--text-on-dark-light); font-size: 1.05rem; line-height: 1.6; }
+.page-hero h1 {
+  font-size: clamp(2.7rem, 5.6vw, 4.4rem);
+  max-width: 17ch;
+  background: linear-gradient(90deg, var(--cream) 0%, var(--gold) 45%, #a9c79a 75%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.page-hero p { margin-top: 18px; max-width: 58ch; color: var(--text-on-dark-light); font-size: 1.1rem; line-height: 1.6; }
+@media (max-width: 700px) {
+  .page-hero { min-height: 46vh; padding: 120px 0 48px; }
+}
 
 /* ============ Legal pages ============ */
 .legal-hero { background: var(--green-dark); color: var(--text-on-dark); padding: 116px 0 48px; }
