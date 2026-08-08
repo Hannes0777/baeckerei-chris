@@ -39,6 +39,35 @@
     moveIndicatorTo(current);
   }
 
+  var timelineEl = document.querySelector('[data-timeline]');
+  var timelineFill = document.querySelector('[data-timeline-fill]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (timelineEl && timelineFill && !reduceMotion) {
+    var ticking = false;
+    var updateTimeline = function () {
+      ticking = false;
+      var rect = timelineEl.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var startY = vh * 0.85;
+      var endY = vh * 0.5;
+      var progress = (startY - rect.top) / (startY - endY + rect.height);
+      progress = Math.max(0, Math.min(1, progress));
+      var totalHeight = Math.max(0, timelineEl.offsetHeight - 34);
+      timelineFill.style.height = (progress * totalHeight) + 'px';
+      timelineFill.style.opacity = Math.max(0, Math.min(1, progress / 0.08));
+    };
+    var onScroll = function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateTimeline);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', updateTimeline);
+    updateTimeline();
+  }
+
   var revealTargets = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealTargets.length) {
     var observer = new IntersectionObserver(

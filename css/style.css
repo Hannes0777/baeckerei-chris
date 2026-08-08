@@ -267,7 +267,7 @@ section { padding: 0; }
   color: var(--text-on-dark-light);
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 6.6vw, 5rem);
+  font-size: clamp(3.1rem, 7.4vw, 5.6rem);
   text-wrap: balance;
   max-width: 15ch;
   background: linear-gradient(90deg, var(--cream) 0%, var(--gold) 45%, #a9c79a 75%, var(--gold) 100%);
@@ -368,7 +368,7 @@ section { padding: 0; }
 }
 .sortiment-card__media { height: 230px; }
 .sortiment-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.sortiment-card h3 { font-size: 1.4rem; color: var(--white); margin: 20px 0 6px; }
+.sortiment-card h3 { font-size: 1.6rem; color: var(--white); margin: 20px 0 6px; }
 .sortiment-card p { font-size: 0.85rem; color: var(--text-on-dark-light); padding: 0 18px; }
 @keyframes sortiment-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
@@ -384,9 +384,50 @@ section { padding: 0; }
   padding: 36px 32px;
 }
 .testimonial-card__stars { color: var(--gold); font-size: 15px; letter-spacing: 3px; margin-bottom: 14px; }
-.testimonial-card p { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; line-height: 1.55; color: var(--green); margin-bottom: 18px; }
+.testimonial-card p { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; line-height: 1.5; color: var(--green); margin-bottom: 18px; }
 .testimonial-card cite { font-style: normal; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-light); }
 @media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+/* ============ Scroll-Timeline (Über-uns-Teaser, Startseite) ============ */
+.about-sticky { position: sticky; top: 120px; align-self: start; }
+.timeline { position: relative; }
+.timeline__item { position: relative; padding-left: 56px; padding-bottom: 44px; }
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: 15px; top: 34px; bottom: -12px;
+  width: 2px;
+  background: var(--cream-dark);
+}
+.timeline__item:last-child::before { display: none; }
+.timeline__dot {
+  position: absolute; left: 0; top: 2px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+.timeline__dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.timeline__year { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; color: var(--gold-muted); margin-bottom: 6px; }
+.timeline__body h3 { font-size: 1.5rem; color: var(--green); margin-bottom: 8px; }
+.timeline__body p { font-size: 1rem; line-height: 1.6; color: var(--text-light); max-width: 46ch; }
+.timeline__fill {
+  position: absolute;
+  left: 14px; top: 18px;
+  width: 4px; height: 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--green) 90%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+@media (max-width: 900px) {
+  .about-sticky { position: static; margin-bottom: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline__fill { display: none; }
+}
 
 /* ============ Day rail (signature structure) ============ */
 .day { position: relative; background: var(--cream); }
@@ -416,7 +457,7 @@ section { padding: 0; }
 .day__time-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); }
 .on-dark .day__time-label { color: var(--text-on-dark-light); }
 .day__body { max-width: 720px; }
-.day__body h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: var(--green); margin-bottom: 20px; }
+.day__body h2 { font-size: clamp(2.05rem, 3.9vw, 2.95rem); color: var(--green); margin-bottom: 20px; }
 .on-dark .day__body h2 { color: var(--white); }
 .day__body > p { font-size: 1.08rem; line-height: 1.7; color: var(--text-light); max-width: 60ch; }
 .on-dark .day__body > p { color: var(--text-on-dark-light); }
@@ -484,7 +525,7 @@ section { padding: 0; }
 .zigzag-row.reverse .zigzag-text { order: 1; }
 .zigzag-media img { width: 100%; aspect-ratio: 3/4; object-fit: cover; box-shadow: var(--shadow-md); }
 .zigzag-text__num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold); display: block; margin-bottom: 10px; }
-.zigzag-text h2, .zigzag-text h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--green); margin-bottom: 14px; }
+.zigzag-text h2, .zigzag-text h3 { font-size: clamp(1.85rem, 3.5vw, 2.65rem); color: var(--green); margin-bottom: 14px; }
 .on-dark .zigzag-text h2, .on-dark .zigzag-text h3 { color: var(--white); }
 .zigzag-text .menu-list { margin-top: 20px; }
 .zigzag-text p { font-size: 1.02rem; line-height: 1.65; color: var(--text-light); max-width: 46ch; }
@@ -534,7 +575,7 @@ section { padding: 0; }
 }
 .diptych__panel--photo::before { content:''; position:absolute; inset:0; background: linear-gradient(0deg, rgba(20,18,16,0.6), transparent 55%); z-index:0; }
 .diptych__eyebrow { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); margin-bottom: 14px; }
-.diptych__panel h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 16px; }
+.diptych__panel h3 { font-size: clamp(1.85rem, 3.5vw, 2.55rem); color: var(--white); margin-bottom: 16px; }
 .diptych__panel p { color: var(--text-on-dark-light); line-height: 1.6; max-width: 42ch; }
 .diptych__meta { margin-top: 28px; font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-on-dark-light); display: grid; gap: 8px; }
 .diptych__meta strong { color: var(--white); }
@@ -621,12 +662,12 @@ section { padding: 0; }
 .page-hero { background: var(--green-dark); color: var(--text-on-dark); padding: 116px 0 56px; }
 .page-hero .eyebrow { color: var(--gold-light); }
 .page-hero .eyebrow::before { background: var(--gold-light); }
-.page-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--white); max-width: 20ch; }
+.page-hero h1 { font-size: clamp(2.5rem, 5.2vw, 3.7rem); color: var(--white); max-width: 20ch; }
 .page-hero p { margin-top: 16px; max-width: 60ch; color: var(--text-on-dark-light); font-size: 1.05rem; line-height: 1.6; }
 
 /* ============ Legal pages ============ */
 .legal-hero { background: var(--green-dark); color: var(--text-on-dark); padding: 116px 0 48px; }
-.legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.legal-hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.2rem); }
 .legal-content { padding: 64px 0 96px; max-width: 780px; margin: 0 auto; }
 .legal-content h2 { color: var(--green); font-size: 1.3rem; margin: 40px 0 14px; }
 .legal-content h2:first-child { margin-top: 0; }
