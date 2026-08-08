@@ -432,18 +432,42 @@ section { padding: 0; }
   .sortiment-marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
 }
 
-/* ============ Testimonial-Karten (Landingpage) ============ */
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+/* ============ Testimonial-Marquee (Wall of Love, Landingpage) ============ */
+.reviews-marquee { overflow: hidden; margin-top: 48px; }
+.reviews-marquee__track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: reviews-scroll 36s linear infinite;
+}
+.reviews-marquee:hover .reviews-marquee__track,
+.reviews-marquee:focus-within .reviews-marquee__track { animation-play-state: paused; }
 .testimonial-card {
+  flex-shrink: 0;
+  width: 340px;
   background: var(--cream);
   border: 1px solid var(--cream-dark);
   border-radius: 24px 24px 90px 24px;
-  padding: 36px 32px;
+  padding: 32px 30px;
 }
-.testimonial-card__stars { color: var(--gold); font-size: 15px; letter-spacing: 3px; margin-bottom: 14px; }
-.testimonial-card p { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; line-height: 1.5; color: var(--green); margin-bottom: 18px; }
+.testimonial-card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.testimonial-card__avatar {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.testimonial-card__avatar svg { width: 18px; height: 18px; }
+.testimonial-card__stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+.testimonial-card p { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; line-height: 1.45; color: var(--green); margin-bottom: 16px; }
 .testimonial-card cite { font-style: normal; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-light); }
-@media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }
+@keyframes reviews-scroll { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 700px) { .testimonial-card { width: 280px; } }
 
 /* ============ Scroll-Timeline (Über-uns-Teaser, Startseite) ============ */
 .about-sticky { position: sticky; top: 120px; align-self: start; }
