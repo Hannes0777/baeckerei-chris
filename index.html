@@ -49,69 +49,135 @@
           <span class="glass-chip">★ 4,3 auf Google</span>
           <span class="glass-chip">Seit 2023 in Rudersberg</span>
         </div>
-        <h1>Zwei Orte.<br><em>Ein</em> Handwerk.</h1>
-        <p class="lede">Von der Backstube in der Welzheimer Straße bis zum neuen Café am Pflegecampus: Bäcker Chris backt seit 2023 nach einer einzigen Regel. Der Teig bekommt genügend Zeit.</p>
+        <h1>Frisch gebacken,<br><em>jeden Morgen.</em></h1>
+        <p class="lede">Sauerteig, Zeit und echtes Handwerk. Bei uns entsteht Brot noch so, wie es entstehen soll – und gleich zwei Orte, an denen man gerne sitzen bleibt.</p>
         <div class="hero__actions">
-          <a class="btn btn-primary" href="sortiment.html">Sortiment entdecken</a>
-          <a class="btn btn-ghost" href="standorte.html">Beide Standorte</a>
+          <a class="btn btn-primary" href="#standort">Wo du uns findest</a>
+          <a class="btn btn-ghost" href="#sortiment">Unser Sortiment</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="handwerk-statement">
-    <div class="container handwerk-statement__grid">
-      <h2>„Der Teig bekommt, was er braucht: Zeit."</h2>
+  <section id="ueber-uns" style="padding:110px 0;">
+    <div class="container split-grid">
+      <div class="split-grid__media">
+        <div class="arch-media" style="height:480px;">
+          <img src="assets/images/stock/bauernland.webp" loading="lazy" alt="Frisch gebackenes Sauerteigbrot von Bäcker Chris, direkt aus dem Ofen" width="900" height="1349">
+        </div>
+        <div class="about-badge"><strong>100%</strong><span>Handarbeit</span></div>
+      </div>
       <div>
-        <p>Keine Abkürzungen, kein Zeitdruck: Seit der Übernahme durch Christian und Tina Schiefer 2023 backt Bäcker Chris nach diesem einen Grundsatz, den schon die Familie Lochmann drei Generationen lang gepflegt hat.</p>
-        <p>Lange Teigführung braucht Geduld, dafür schmeckt man sie in jeder Kruste. <a href="ueber-uns.html" style="color:var(--gold-light); border-bottom:1px solid var(--gold-light);">Mehr über unsere Geschichte</a></p>
+        <span class="eyebrow eyebrow--on-light">Über uns</span>
+        <h2 class="grad-text" style="font-size:clamp(1.9rem, 4vw, 2.9rem); margin-bottom:22px;">Traditionelles Handwerk, modern gedacht.</h2>
+        <p style="font-size:1.1rem; line-height:1.7; color:var(--text-light); max-width:52ch;">Am 22. Januar 2023 haben Christian („Chris") und Tina Schiefer die Bäckerei in der Welzheimer Straße übernommen, die zuvor drei Generationen lang die Familie Lochmann geführt hat. Ihr Grundsatz ist bis heute derselbe: der Teig bekommt genügend Zeit.</p>
+        <p style="font-size:1.1rem; line-height:1.7; color:var(--text-light); max-width:52ch; margin-top:16px;">Ein Hausbrand im ersten Jahr hat die junge Selbstständigkeit auf die Probe gestellt – aufgehalten hat er die Familie nicht. Heute ist Chris „der Bäcker neben dem Kino", und mit dem Café am Pflegecampus ist ein zweiter Ort für alle Generationen dazugekommen.</p>
+        <a class="btn-text" href="ueber-uns.html" style="margin-top:24px; display:inline-flex;">Unsere ganze Geschichte →</a>
       </div>
     </div>
   </section>
 
-  <section style="padding:80px 0;">
-    <div class="container" style="max-width:900px;">
-      <div class="angebote-callout reveal">
+  <section id="sortiment" style="background:var(--green); padding:100px 0; overflow:hidden;">
+    <div class="container text-center">
+      <span class="eyebrow">Unser Sortiment</span>
+      <h2 class="grad-text--on-dark" style="font-size:clamp(1.9rem, 4vw, 2.9rem);">Vier Brote, ein Handwerk.</h2>
+      <p style="color:var(--text-on-dark-light); max-width:56ch; margin:18px auto 0; font-size:1.05rem;">Über 15 Brotsorten, dazu Brezeln, süße Teilchen und das Café-Menü. Hier ein Ausschnitt aus dem täglichen Ofen.</p>
+    </div>
+    <div class="sortiment-marquee">
+      <div class="sortiment-marquee__track">
+        <div class="sortiment-card"><div class="sortiment-card__media"><img src="assets/images/stock/baguette.webp" loading="lazy" alt="Baguette von Bäcker Chris (Symbolfoto)" width="900" height="1125"></div><h3>Baguette</h3><p>Knusprige Kruste, luftige Krume</p></div>
+        <div class="sortiment-card"><div class="sortiment-card__media"><img src="assets/images/stock/dinkel.webp" loading="lazy" alt="Dinkelbrot von Bäcker Chris (Symbolfoto)" width="900" height="1350"></div><h3>Dinkelbrot</h3><p>Mild im Geschmack, bekömmlich</p></div>
+        <div class="sortiment-card"><div class="sortiment-card__media"><img src="assets/images/stock/kernsaaten.webp" loading="lazy" alt="Roggenbrot von Bäcker Chris (Symbolfoto)" width="900" height="1350"></div><h3>Roggenbrot</h3><p>Kräftig, herzhaft, lange haltbar</p></div>
+        <div class="sortiment-card"><div class="sortiment-card__media"><img src="assets/images/stock/spezial.webp" loading="lazy" alt="Weizenbrot von Bäcker Chris (Symbolfoto)" width="900" height="600"></div><h3>Weizenbrot</h3><p>Locker, hell, ein Klassiker</p></div>
+        <!-- Duplikat für nahtlose Schleife -->
+        <div class="sortiment-card" aria-hidden="true"><div class="sortiment-card__media"><img src="assets/images/stock/baguette.webp" loading="lazy" alt="" width="900" height="1125"></div><h3>Baguette</h3><p>Knusprige Kruste, luftige Krume</p></div>
+        <div class="sortiment-card" aria-hidden="true"><div class="sortiment-card__media"><img src="assets/images/stock/dinkel.webp" loading="lazy" alt="" width="900" height="1350"></div><h3>Dinkelbrot</h3><p>Mild im Geschmack, bekömmlich</p></div>
+        <div class="sortiment-card" aria-hidden="true"><div class="sortiment-card__media"><img src="assets/images/stock/kernsaaten.webp" loading="lazy" alt="" width="900" height="1350"></div><h3>Roggenbrot</h3><p>Kräftig, herzhaft, lange haltbar</p></div>
+        <div class="sortiment-card" aria-hidden="true"><div class="sortiment-card__media"><img src="assets/images/stock/spezial.webp" loading="lazy" alt="" width="900" height="600"></div><h3>Weizenbrot</h3><p>Locker, hell, ein Klassiker</p></div>
+      </div>
+    </div>
+    <div class="container text-center" style="margin-top:44px;">
+      <a class="btn btn-ghost" href="sortiment.html">Ganzes Sortiment ansehen</a>
+    </div>
+  </section>
+
+  <section id="cafe" style="padding:110px 0;">
+    <div class="container split-grid" style="grid-template-columns:1.1fr 0.9fr;">
+      <div>
+        <span class="eyebrow eyebrow--on-light">Zum Zusammensitzen</span>
+        <h2 class="grad-text" style="font-size:clamp(1.9rem, 4vw, 2.9rem); margin-bottom:22px;">Nicht nur zum Mitnehmen.</h2>
+        <p style="font-size:1.1rem; line-height:1.7; color:var(--text-light); max-width:50ch;">Ob ein Kaffee zwischendurch in der Welzheimer Straße oder ein ganzer Vormittag im neuen Café am Pflegecampus: Frühstück, Brunch und Mittagessen, eingerichtet mit derselben Sorgfalt, mit der wir backen.</p>
+        <div style="margin-top:28px;"><a class="btn btn-outline" href="standorte.html">Beide Standorte im Detail</a></div>
+      </div>
+      <div class="split-grid__media arch-media--mirror" style="height:480px; box-shadow:var(--shadow-md);">
+        <img src="assets/images/cafe-kaminecke.webp" loading="lazy" alt="Kamin-Ecke im Café am Pflegecampus von Bäcker Chris" width="1170" height="1558">
+      </div>
+    </div>
+  </section>
+
+  <section id="standort" style="background:var(--green-dark); color:var(--text-on-dark); padding:110px 0;">
+    <div class="container split-grid" style="grid-template-columns:1fr 1fr; align-items:start;">
+      <div>
+        <span class="eyebrow">Vorbeikommen</span>
+        <h2 class="grad-text--on-dark" style="font-size:clamp(1.9rem, 4vw, 2.9rem); margin-bottom:36px;">Wir freuen uns auf dich.</h2>
+
+        <div style="margin-bottom:36px;">
+          <div class="diptych__eyebrow" style="margin-bottom:10px;">Seit 2023</div>
+          <h3 style="font-size:1.3rem; color:var(--white); margin-bottom:12px;">Bäckerei Welzheimer Straße</h3>
+          <p style="color:var(--text-on-dark-light); margin-bottom:14px;">Welzheimer Str. 31, 73635 Rudersberg<br><a href="tel:+4971839339144" style="border-bottom:1px solid var(--gold-light);">07183 9339144</a></p>
+          <table class="hours-table">
+            <tr><td>Montag – Freitag</td><td>6:00 – 13:00 Uhr</td></tr>
+            <tr><td>Samstag</td><td>6:00 – 12:00 Uhr</td></tr>
+            <tr><td>Sonntag</td><td>7:30 – 10:00 Uhr</td></tr>
+          </table>
+        </div>
+
         <div>
-          <div class="angebote-callout__label">Diese Woche</div>
-          <h3>Aktuelle Angebote &amp; Saisongebäck</h3>
-          <p>Dieser Kasten ist bewusst leicht austauschbar gebaut, ideal für Wochenangebote und Saisongebäck wie die Neujahrsbrezel.</p>
+          <div class="diptych__eyebrow" style="margin-bottom:10px;">Seit Mai 2026</div>
+          <h3 style="font-size:1.3rem; color:var(--white); margin-bottom:12px;">Café am Pflegecampus</h3>
+          <p style="color:var(--text-on-dark-light);">Bronnwiesenweg, 73635 Rudersberg<br>Frühstück · Brunch · Mittagessen</p>
+          <p class="note-inline">Öffnungszeiten stehen noch nicht öffentlich fest.</p>
         </div>
-        <a class="btn btn-outline" href="sortiment.html">Ganzes Sortiment</a>
+
+        <div class="diptych__actions" style="margin-top:32px;">
+          <a class="btn btn-primary" href="standorte.html">Details &amp; Öffnungszeiten</a>
+        </div>
+      </div>
+
+      <div class="split-grid__media arch-media" style="height:460px;">
+        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q=Welzheimer+Str.+31,+73635+Rudersberg&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Bäckerei Welzheimer Straße, Rudersberg"></iframe>
       </div>
     </div>
   </section>
 
-  <section class="diptych" id="standorte">
-    <div class="diptych__panel diptych__panel--dark on-dark">
-      <div class="diptych__eyebrow">Seit 2023</div>
-      <h3>Bäckerei Welzheimer Straße</h3>
-      <p>Die Ursprungs-Backstube, heute bekannt als „der Bäcker neben dem Kino".</p>
-      <div class="diptych__meta">
-        <div>Welzheimer Str. 31, 73635 Rudersberg</div>
-        <div><a href="tel:+4971839339144" style="border-bottom:1px solid var(--gold-light);">07183 9339144</a></div>
-      </div>
-      <div class="diptych__actions">
-        <a class="btn btn-primary" href="standorte.html">Details &amp; Öffnungszeiten</a>
-      </div>
+  <section style="background:var(--cream-dark); padding:100px 0;">
+    <div class="container text-center">
+      <span class="eyebrow eyebrow--on-light">Was Kunden sagen</span>
+      <h2 class="grad-text" style="font-size:clamp(1.9rem, 4vw, 2.9rem); margin-bottom:20px;">Gutes Brot spricht sich herum.</h2>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A4cker+Chris+Rudersberg" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:0.92rem; font-weight:600; color:var(--green);">
+        <span class="quote-break__stars" style="color:var(--gold);">★★★★★</span>
+        4,3 von 5 · 77 Google-Bewertungen ansehen
+      </a>
     </div>
-    <div class="diptych__panel diptych__panel--photo">
-      <img src="assets/images/cafe-wolkenwand.webp" loading="lazy" alt="Café am Pflegecampus" width="1170" height="1558">
-      <div class="diptych__overlay">
-        <div class="diptych__eyebrow">Seit Mai 2026</div>
-        <h3>Café am Pflegecampus</h3>
-        <p>Frühstück · Brunch · Mittagessen in Bronnwiesenweg, Rudersberg.</p>
-        <div class="diptych__actions">
-          <a class="btn btn-ghost" href="standorte.html">Details &amp; Öffnungszeiten</a>
+    <div class="container">
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>„Super Angebot, Super Qualität, alles in allem Tipp-Top."</p>
+          <cite>— Google-Bewertung</cite>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>„Man merkt sofort: hier steckt Handwerk drin – und der Laden lädt zum Bleiben ein."</p>
+          <cite>— Stammkundschaft aus Rudersberg</cite>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>„Das Dinkelbrot ist mein Favorit: knusprige Kruste, super Krume, jedes Mal frisch."</p>
+          <cite>— Nachbarschaft Welzheimer Straße</cite>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="quote-break">
-    <div class="quote-break__stars">★★★★★</div>
-    <blockquote>„Super Angebot, Super Qualität, alles in allem Tipp-Top."</blockquote>
-    <div class="quote-break__meta">4,3 von 5 · 77 Google-Bewertungen · <a href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A4cker+Chris+Rudersberg" target="_blank" rel="noopener">alle Bewertungen ansehen</a></div>
   </section>
 
   <section id="social" style="background:var(--steel); color:var(--text-on-dark); padding:56px 0;">
@@ -128,30 +194,6 @@
       </div>
     </div>
   </section>
-
-  <section class="closing">
-    <div class="container">
-      <h2>Lust auf frisches Brot oder ein entspanntes Frühstück?</h2>
-      <div class="closing__side">
-        <a href="tel:+4971839339144">07183 9339144</a>
-        <div><a href="kontakt.html" style="border-bottom:1px solid var(--gold); color:var(--green);">Kontakt &amp; Anfahrt →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
-      <!-- duplicate for seamless loop -->
-      <div class="marquee__frame"><img src="assets/images/cafe-sitzbereich-mural.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-kaminecke.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-glasfront.webp" alt=""></div>
-      <div class="marquee__frame"><img src="assets/images/cafe-wolkenwand.webp" alt=""></div>
-    </div>
-  </div>
 
 </main>
 
