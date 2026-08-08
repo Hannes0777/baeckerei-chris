@@ -404,6 +404,56 @@ section { padding: 0; }
   .about-badge strong { font-size: 1.6rem; }
 }
 
+/* ============ Wochen-Spotlight (Startseite) ============ */
+.weekly-spotlight {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 55%, var(--green-dark) 100%);
+  border-radius: 32px 120px 32px 120px;
+  padding: 44px 48px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.weekly-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -55%; right: -8%;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(217,164,65,0.4), transparent 70%);
+  pointer-events: none;
+}
+.weekly-spotlight__badge {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px -8px rgba(0,0,0,0.45);
+}
+.weekly-spotlight__badge svg { width: 36px; height: 36px; }
+.weekly-spotlight__body { position: relative; z-index: 1; flex: 1; min-width: 240px; }
+.weekly-spotlight__body h3 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 8px 0 10px;
+  background: linear-gradient(90deg, var(--cream) 0%, var(--gold) 55%, #a9c79a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.weekly-spotlight__body p { color: var(--text-on-dark-light); max-width: 54ch; font-size: 1.02rem; line-height: 1.6; }
+.weekly-spotlight .btn-primary { position: relative; z-index: 1; flex-shrink: 0; }
+@media (max-width: 700px) {
+  .weekly-spotlight { padding: 32px 28px; border-radius: 28px 60px 28px 60px; }
+}
+
 /* ============ Sortiment-Marquee (Landingpage) ============ */
 .sortiment-marquee { overflow: hidden; margin-top: 56px; }
 .sortiment-marquee__track {
@@ -566,6 +616,21 @@ section { padding: 0; }
 }
 .weekly-offer h3 { font-size: 1.5rem; color: var(--green); margin: 6px 0 10px; }
 .weekly-offer p { color: var(--text-light); max-width: 46ch; }
+
+/* ============ Kategorie-Sprungnavigation (Sortiment) ============ */
+section[id] { scroll-margin-top: 96px; }
+.category-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.category-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1.5px solid var(--cream-dark);
+  color: var(--green);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.category-nav a:hover { background: var(--green); border-color: var(--green); color: var(--text-on-dark); transform: translateY(-2px); }
 
 /* ============ Zigzag (Brot-Vorstellungsrunde) ============ */
 .zigzag-row {
