@@ -492,7 +492,7 @@ section { padding: 0; }
 }
 
 /* ============ Sortiment-Marquee (Landingpage) ============ */
-.sortiment-marquee { overflow: hidden; margin-top: 56px; }
+.sortiment-marquee { overflow: hidden; margin-top: 44px; padding: 16px 6px; }
 .sortiment-marquee__track {
   display: flex;
   gap: 24px;
