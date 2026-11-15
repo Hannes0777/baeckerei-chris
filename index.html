@@ -59,6 +59,7 @@
     </div>
   </section>
 
+  <!--cms:angebot--><!--/cms-->
   <!--cms:woche--><section style="padding:64px 0 0;">
     <div class="container">
       <div class="weekly-spotlight reveal">
@@ -71,7 +72,7 @@
           <h3>Saisonales &amp; Sonderbrote</h3>
           <p>Neben dem festen Sortiment gibt es wöchentlich wechselnde Sonderbrote und Saisongebäck wie die Neujahrsbrezel – am besten kurz vorher in der Bäckerei oder auf Instagram nachfragen, was gerade aus dem Ofen kommt.</p>
         </div>
-        <a class="btn btn-primary" href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener">Aktuelles auf Instagram</a>
+        <a class="btn btn-primary" href="{{k.instagram}}" target="_blank" rel="noopener">Aktuelles auf Instagram</a>
       </div>
     </div>
   </section><!--/cms-->
@@ -140,7 +141,7 @@
         <div style="margin-bottom:36px;">
           <div class="diptych__eyebrow" style="margin-bottom:10px;">Seit 2023</div>
           <h3 style="font-size:1.5rem; color:var(--white); margin-bottom:12px;">Bäckerei Welzheimer Straße</h3>
-          <p style="color:var(--text-on-dark-light); margin-bottom:14px;">Welzheimer Str. 31, 73635 Rudersberg<br><a href="tel:+4971839339144" style="border-bottom:1px solid var(--gold-light);">07183 9339144</a></p>
+          <p style="color:var(--text-on-dark-light); margin-bottom:14px;">{{b.strasse}}, {{b.plz_ort}}<br><a href="tel:{{b.telefon_href}}" style="border-bottom:1px solid var(--gold-light);">{{b.telefon}}</a></p>
           <!--cms:zeiten baeckerei index--><table class="hours-table">
             <tr><td>Montag – Freitag</td><td>6:00 – 13:00 Uhr</td></tr>
             <tr><td>Samstag</td><td>6:00 – 12:00 Uhr</td></tr>
@@ -151,7 +152,7 @@
         <div>
           <div class="diptych__eyebrow" style="margin-bottom:10px;">Seit Mai 2026</div>
           <h3 style="font-size:1.5rem; color:var(--white); margin-bottom:12px;">Café am Pflegecampus</h3>
-          <p style="color:var(--text-on-dark-light);">Bronnwiesenweg, 73635 Rudersberg<br>Frühstück · Brunch · Mittagessen</p>
+          <p style="color:var(--text-on-dark-light);">{{c.strasse}}, {{c.plz_ort}}<br>Frühstück · Brunch · Mittagessen</p>
           <!--cms:zeiten cafe index--><p class="note-inline">Öffnungszeiten stehen noch nicht öffentlich fest.</p><!--/cms-->
         </div>
 
@@ -161,7 +162,7 @@
       </div>
 
       <div class="split-grid__media" style="height:460px;">
-        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q=Welzheimer+Str.+31,+73635+Rudersberg&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Bäckerei Welzheimer Straße, Rudersberg"></iframe>
+        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q={{b.embed}}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Bäckerei Welzheimer Straße, Rudersberg"></iframe>
       </div>
     </div>
   </section>
@@ -270,8 +271,8 @@
           <div class="social-follow__meta">Rund 570 Follower auf Instagram</div>
         </div>
         <div class="social-links">
-          <a href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
+          <a href="{{k.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="{{k.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
         </div>
       </div>
     </div>
@@ -286,12 +287,12 @@
         <div class="footer-brand"><img src="assets/images/logo.webp" alt="" width="30" height="30"> Bäcker Chris</div>
         <p>Handwerksbäckerei und Café in Rudersberg, seit 2023 mit Liebe zum langsamen Teig.</p>
         <div class="social-links" style="margin-top:20px;">
-          <a href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
+          <a href="{{k.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="{{k.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h5>Bäckerei</h5><ul><li>Welzheimer Str. 31</li><li>73635 Rudersberg</li><li><a href="tel:+4971839339144">07183 9339144</a></li></ul></div>
-      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>Bronnwiesenweg</li><li>73635 Rudersberg</li><li>Frühstück · Brunch · Mittag</li></ul></div>
+      <div class="footer-col"><h5>Bäckerei</h5><ul><li>{{b.strasse}}</li><li>{{b.plz_ort}}</li><li><a href="tel:{{b.telefon_href}}">{{b.telefon}}</a></li></ul></div>
+      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>{{c.strasse}}</li><li>{{c.plz_ort}}</li><li>Frühstück · Brunch · Mittag</li></ul></div>
       <div class="footer-col"><h5>Seite</h5><ul><li><a href="sortiment.html">Sortiment</a></li><li><a href="standorte.html">Standorte</a></li><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
     </div>
     <div class="footer-bottom">

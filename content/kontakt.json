@@ -1,0 +1,8 @@
+{
+  "seitentitel": "Wir freuen uns auf Sie",
+  "seitentext": "Ob Bäckerei in der Welzheimer Straße oder Café am Pflegecampus: rufen Sie einfach an oder schauen Sie vorbei.",
+  "baeckerei": { "strasse": "Welzheimer Str. 31", "plz_ort": "73635 Rudersberg", "telefon": "07183 9339144" },
+  "cafe": { "strasse": "Bronnwiesenweg", "plz_ort": "73635 Rudersberg" },
+  "instagram": "https://www.instagram.com/baeckerchris/",
+  "facebook": "https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/"
+}

@@ -52,6 +52,77 @@ collections:
               - { name: bild, label: "Hintergrundbild", widget: image, required: false }
 
   # ----------------------------------------------------------
+  - name: angebot
+    label: "🏷️ Angebote"
+    description: "Angebote erscheinen oben auf der Startseite, solange das heutige Datum zwischen „Gültig von“ und „Gültig bis“ liegt. Danach verschwinden sie von selbst, es muss nichts gelöscht werden."
+    files:
+      - name: angebot
+        label: "Angebote verwalten"
+        file: content/angebot.json
+        fields:
+          - name: angebote
+            label: "Angebote"
+            label_singular: "Angebot"
+            widget: list
+            required: false
+            min: 0
+            summary: "{{titel}} ({{gueltig_von}} – {{gueltig_bis}})"
+            fields:
+              - { name: titel, label: "Titel", widget: string, hint: "z.B. Dinkelbrot zum Probierpreis" }
+              - { name: text, label: "Kurzer Text (optional)", widget: string, required: false, hint: "z.B. Nur solange der Vorrat reicht" }
+              - { name: preis, label: "Preis oder Aktion (optional)", widget: string, required: false, hint: "z.B. 3,90 € oder 2 für 1" }
+              - { name: gueltig_von, label: "Gültig von", widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+              - { name: gueltig_bis, label: "Gültig bis", widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, hint: "Am Tag danach verschwindet das Angebot automatisch." }
+
+  # ----------------------------------------------------------
+  - name: ueber_uns
+    label: "📖 Über uns"
+    files:
+      - name: ueber_uns
+        label: "Seite „Über uns“"
+        file: content/ueber-uns.json
+        fields:
+          - { name: titel, label: "Überschrift der Seite", widget: string }
+          - { name: foto, label: "Foto (z.B. Familie Schiefer)", widget: image, required: false, hint: "Solange kein Foto gewählt ist, steht dort der Platzhalter „Foto folgt“." }
+          - { name: foto_alt, label: "Foto beschreiben (für Sehbehinderte und Google)", widget: string, required: false }
+          - name: zeitleiste
+            label: "Geschichte (Zeitleiste)"
+            label_singular: "Abschnitt"
+            widget: list
+            summary: "{{jahr}}: {{titel}}"
+            hint: "Von oben nach unten, ältestes zuerst. Reihenfolge per Ziehen änderbar."
+            fields:
+              - { name: jahr, label: "Jahr oder Datum", widget: string, hint: "z.B. 2024 oder 9. Mai 2026" }
+              - { name: titel, label: "Überschrift", widget: string }
+              - { name: text, label: "Text", widget: text }
+
+  # ----------------------------------------------------------
+  - name: kontakt
+    label: "📞 Kontakt & Adressen"
+    files:
+      - name: kontakt
+        label: "Adressen, Telefon, Social Media"
+        file: content/kontakt.json
+        fields:
+          - { name: seitentitel, label: "Kontaktseite: Überschrift", widget: string }
+          - { name: seitentext, label: "Kontaktseite: Text darunter", widget: text }
+          - name: baeckerei
+            label: "Bäckerei"
+            widget: object
+            fields:
+              - { name: strasse, label: "Straße und Hausnummer", widget: string }
+              - { name: plz_ort, label: "PLZ und Ort", widget: string }
+              - { name: telefon, label: "Telefon", widget: string, hint: "z.B. 07183 9339144" }
+          - name: cafe
+            label: "Café am Pflegecampus"
+            widget: object
+            fields:
+              - { name: strasse, label: "Straße (und Hausnummer)", widget: string }
+              - { name: plz_ort, label: "PLZ und Ort", widget: string }
+          - { name: instagram, label: "Instagram-Link", widget: string }
+          - { name: facebook, label: "Facebook-Link", widget: string }
+
+  # ----------------------------------------------------------
   - name: sortiment
     label: "🥖 Sortiment"
     files:

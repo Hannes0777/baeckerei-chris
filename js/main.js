@@ -103,3 +103,19 @@
     revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
   }
 })();
+
+/* Angebote: nach Ablauf des Datums ausblenden, auch ohne neuen Seitenbau */
+(function () {
+  var box = document.querySelector('[data-angebote]');
+  if (!box) return;
+  var d = new Date();
+  var heute = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  var sichtbar = 0;
+  box.querySelectorAll('.angebot').forEach(function (a) {
+    var von = a.getAttribute('data-von'), bis = a.getAttribute('data-bis');
+    var aus = (von && von > heute) || (bis && bis < heute);
+    a.hidden = !!aus;
+    if (!aus) sichtbar++;
+  });
+  box.hidden = sichtbar === 0;
+})();

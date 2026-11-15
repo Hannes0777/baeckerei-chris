@@ -57,14 +57,14 @@
           <tr><td>Sonntag</td><td>7:30 – 10:00 Uhr</td></tr>
         </table>
         <p class="note-inline on-light">Öffnungszeiten laut Online-Verzeichnissen, bitte mit dem Betrieb final abgleichen.</p><!--/cms-->
-        <p style="margin-top:20px; color:var(--text-light); font-family:var(--font-mono); font-size:0.92rem;">Welzheimer Str. 31, 73635 Rudersberg<br><a href="tel:+4971839339144" style="color:var(--green); border-bottom:1px solid var(--gold);">07183 9339144</a></p>
+        <p style="margin-top:20px; color:var(--text-light); font-family:var(--font-mono); font-size:0.92rem;">{{b.strasse}}, {{b.plz_ort}}<br><a href="tel:{{b.telefon_href}}" style="color:var(--green); border-bottom:1px solid var(--gold);">{{b.telefon}}</a></p>
         <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Welzheimer+Str.+31%2C+73635+Rudersberg" target="_blank" rel="noopener">Route planen</a>
-          <a class="btn btn-outline" href="tel:+4971839339144">Anrufen</a>
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination={{b.route}}" target="_blank" rel="noopener">Route planen</a>
+          <a class="btn btn-outline" href="tel:{{b.telefon_href}}">Anrufen</a>
         </div>
       </div>
       <div class="split-grid__media" style="height:440px; box-shadow:var(--shadow-md);">
-        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q=Welzheimer+Str.+31,+73635+Rudersberg&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Bäckerei Welzheimer Straße, Rudersberg"></iframe>
+        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q={{b.embed}}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Bäckerei Welzheimer Straße, Rudersberg"></iframe>
       </div>
     </div>
   </section>
@@ -76,13 +76,13 @@
         <h2 class="grad-text--on-dark" style="font-size:clamp(2.2rem, 4.6vw, 3.3rem); margin-bottom:20px;">Café am Pflegecampus</h2>
         <p style="font-size:1.1rem; line-height:1.7; color:var(--text-on-dark-light); max-width:46ch;">Frühstück, Brunch und Mittagessen: ein neuer, generationenübergreifender Treffpunkt direkt an der Pflegeeinrichtung in Rudersberg.</p>
         <!--cms:zeiten cafe dunkel--><p class="note-inline" style="margin-top:28px;">Öffnungszeiten stehen noch nicht öffentlich fest, bitte vom Betrieb ergänzen lassen.</p><!--/cms-->
-        <p style="margin-top:20px; color:var(--text-on-dark-light); font-family:var(--font-mono); font-size:0.92rem;">Bronnwiesenweg, 73635 Rudersberg<br>Frühstück · Brunch · Mittagessen</p>
+        <p style="margin-top:20px; color:var(--text-on-dark-light); font-family:var(--font-mono); font-size:0.92rem;">{{c.strasse}}, {{c.plz_ort}}<br>Frühstück · Brunch · Mittagessen</p>
         <div style="margin-top:24px;">
-          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Bronnwiesenweg%2C+73635+Rudersberg" target="_blank" rel="noopener">Route planen</a>
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination={{c.route}}" target="_blank" rel="noopener">Route planen</a>
         </div>
       </div>
       <div class="split-grid__media" style="height:440px;">
-        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q=Bronnwiesenweg,+73635+Rudersberg&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Café am Pflegecampus, Rudersberg"></iframe>
+        <iframe class="map-frame" style="height:100%;" src="https://www.google.com/maps?q={{c.embed}}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Café am Pflegecampus, Rudersberg"></iframe>
       </div>
     </div>
   </section>
@@ -96,12 +96,12 @@
         <div class="footer-brand"><img src="assets/images/logo.webp" alt="" width="30" height="30"> Bäcker Chris</div>
         <p>Handwerksbäckerei und Café in Rudersberg, seit 2023 mit Liebe zum langsamen Teig.</p>
         <div class="social-links" style="margin-top:20px;">
-          <a href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
+          <a href="{{k.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="{{k.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h5>Bäckerei</h5><ul><li>Welzheimer Str. 31</li><li>73635 Rudersberg</li><li><a href="tel:+4971839339144">07183 9339144</a></li></ul></div>
-      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>Bronnwiesenweg</li><li>73635 Rudersberg</li><li>Frühstück · Brunch · Mittag</li></ul></div>
+      <div class="footer-col"><h5>Bäckerei</h5><ul><li>{{b.strasse}}</li><li>{{b.plz_ort}}</li><li><a href="tel:{{b.telefon_href}}">{{b.telefon}}</a></li></ul></div>
+      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>{{c.strasse}}</li><li>{{c.plz_ort}}</li><li>Frühstück · Brunch · Mittag</li></ul></div>
       <div class="footer-col"><h5>Seite</h5><ul><li><a href="sortiment.html">Sortiment</a></li><li><a href="standorte.html">Standorte</a></li><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
     </div>
     <div class="footer-bottom">

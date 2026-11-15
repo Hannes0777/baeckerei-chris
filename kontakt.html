@@ -40,8 +40,8 @@
     <div class="page-hero__bg"><img src="assets/images/cafe-sitzbereich-mural.webp" alt="" width="1170" height="1558"></div>
     <div class="container">
       <span class="eyebrow">Kontakt</span>
-      <h1>Wir freuen uns auf Sie</h1>
-      <p>Ob Bäckerei in der Welzheimer Straße oder Café am Pflegecampus: rufen Sie einfach an oder schauen Sie vorbei.</p>
+      <h1>{{k.seitentitel}}</h1>
+      <p>{{k.seitentext}}</p>
     </div>
   </div>
 
@@ -52,19 +52,19 @@
           <h3>Bäckerei Welzheimer Straße</h3>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>Welzheimer Str. 31<br>73635 Rudersberg</div>
+            <div>{{b.strasse}}<br>{{b.plz_ort}}</div>
           </div>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+4971839339144">07183 9339144</a>
+            <a href="tel:{{b.telefon_href}}">{{b.telefon}}</a>
           </div>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <!--cms:kurz baeckerei dunkel--><div>Mo–Fr 6–13 · Sa 6–12 · So 7:30–10 Uhr<br><span style="font-size:0.8rem; color:var(--text-on-dark-light);">(vorläufig, bitte bestätigen)</span></div><!--/cms-->
           </div>
           <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="tel:+4971839339144">Jetzt anrufen</a>
-            <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Welzheimer+Str.+31%2C+73635+Rudersberg" target="_blank" rel="noopener">Route planen</a>
+            <a class="btn btn-primary" href="tel:{{b.telefon_href}}">Jetzt anrufen</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination={{b.route}}" target="_blank" rel="noopener">Route planen</a>
           </div>
         </div>
 
@@ -72,14 +72,14 @@
           <h3>Café am Pflegecampus</h3>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>Bronnwiesenweg<br>73635 Rudersberg</div>
+            <div>{{c.strasse}}<br>{{c.plz_ort}}</div>
           </div>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <!--cms:kurz cafe hell--><div>Frühstück · Brunch · Mittagessen<br><span style="font-size:0.8rem; color:var(--text-light);">Öffnungszeiten in Abstimmung</span></div><!--/cms-->
           </div>
           <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Bronnwiesenweg%2C+73635+Rudersberg" target="_blank" rel="noopener">Route planen</a>
+            <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination={{c.route}}" target="_blank" rel="noopener">Route planen</a>
           </div>
         </div>
       </div>
@@ -90,8 +90,8 @@
           <p style="color:var(--text-light); font-size:0.95rem;">Fragen zu Angeboten oder dem Café? Auch über Instagram oder Facebook erreichen Sie Bäcker Chris direkt.</p>
         </div>
         <div class="social-links">
-          <a href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener" aria-label="Instagram" style="border-color:var(--cream-dark); color:var(--green);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/" target="_blank" rel="noopener" aria-label="Facebook" style="border-color:var(--cream-dark); color:var(--green);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
+          <a href="{{k.instagram}}" target="_blank" rel="noopener" aria-label="Instagram" style="border-color:var(--cream-dark); color:var(--green);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="{{k.facebook}}" target="_blank" rel="noopener" aria-label="Facebook" style="border-color:var(--cream-dark); color:var(--green);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
         </div>
       </div>
     </div>
@@ -106,12 +106,12 @@
         <div class="footer-brand"><img src="assets/images/logo.webp" alt="" width="30" height="30"> Bäcker Chris</div>
         <p>Handwerksbäckerei und Café in Rudersberg, seit 2023 mit Liebe zum langsamen Teig.</p>
         <div class="social-links" style="margin-top:20px;">
-          <a href="https://www.instagram.com/baeckerchris/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/p/B%C3%A4cker-Chris-61572901467348/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
+          <a href="{{k.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="{{k.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.3C15.9 4.2 15 4 13.9 4c-2.3 0-3.9 1.4-3.9 4v2.8H7.5V14H10v8h3.5z"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h5>Bäckerei</h5><ul><li>Welzheimer Str. 31</li><li>73635 Rudersberg</li><li><a href="tel:+4971839339144">07183 9339144</a></li></ul></div>
-      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>Bronnwiesenweg</li><li>73635 Rudersberg</li><li>Frühstück · Brunch · Mittag</li></ul></div>
+      <div class="footer-col"><h5>Bäckerei</h5><ul><li>{{b.strasse}}</li><li>{{b.plz_ort}}</li><li><a href="tel:{{b.telefon_href}}">{{b.telefon}}</a></li></ul></div>
+      <div class="footer-col"><h5>Café am Pflegecampus</h5><ul><li>{{c.strasse}}</li><li>{{c.plz_ort}}</li><li>Frühstück · Brunch · Mittag</li></ul></div>
       <div class="footer-col"><h5>Seite</h5><ul><li><a href="sortiment.html">Sortiment</a></li><li><a href="standorte.html">Standorte</a></li><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
     </div>
     <div class="footer-bottom">

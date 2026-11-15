@@ -10,6 +10,7 @@ const SKIP = new Set(['.git', '.github', 'content', '_site', 'node_modules', 'Bi
 
 const J = n => JSON.parse(fs.readFileSync(path.join(ROOT, 'content', n + '.json'), 'utf8'));
 const ST = J('start'), SO = J('sortiment'), OZ = J('oeffnungszeiten');
+const KO = J('kontakt'), UE = J('ueber-uns'), AN = J('angebot');
 
 const esc = x => String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const slug = x => String(x).toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -98,9 +99,77 @@ const kategorien = () => (SO.kategorien || []).map((k, i) => {
   </section>`;
 }).join('\n\n  ');
 
+
+/* ---------- Kontaktdaten als Platzhalter {{b.strasse}} usw. ---------- */
+const plus = t => encodeURIComponent(t).replace(/%20/g, '+');
+const B = KO.baeckerei || {}, C = KO.cafe || {};
+const telHref = t => { const d = String(t || '').replace(/\D/g, ''); return d ? '+49' + d.replace(/^0/, '') : ''; };
+const TOKENS = {
+  'b.strasse': B.strasse, 'b.plz_ort': B.plz_ort, 'b.telefon': B.telefon, 'b.telefon_href': telHref(B.telefon),
+  'b.route': plus(B.strasse + ', ' + B.plz_ort), 'b.embed': plus(B.strasse) + ',+' + plus(B.plz_ort),
+  'c.strasse': C.strasse, 'c.plz_ort': C.plz_ort,
+  'c.route': plus(C.strasse + ', ' + C.plz_ort), 'c.embed': plus(C.strasse) + ',+' + plus(C.plz_ort),
+  'k.instagram': KO.instagram, 'k.facebook': KO.facebook, 'k.seitentitel': KO.seitentitel, 'k.seitentext': KO.seitentext,
+  'u.titel': UE.titel,
+};
+const tokens = html => html.replace(/{{([a-z_.]+)}}/g, (m, k) => {
+  if (!(k in TOKENS)) throw new Error('Unbekannter Platzhalter ' + m);
+  return esc(TOKENS[k]);
+});
+
+/* ---------- Über uns ---------- */
+const ueberFoto = () => UE.foto
+  ? `<div class="split-grid__media about-sticky">
+          <div class="arch-media" style="height:420px;"><img src="${img(UE.foto)}" alt="${esc(UE.foto_alt || '')}" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>`
+  : `<div class="split-grid__media about-sticky">
+          <div class="arch-media placeholder-media" style="height:420px;">
+            <div class="placeholder-media__inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.2"/><path d="M8 5l1.5-2h5L16 5"/></svg><span>Foto von Christian &amp; Tina Schiefer folgt</span></div>
+          </div>
+        </div>`;
+
+const zeitleiste = () => `<div class="timeline" data-timeline>
+          <div class="timeline__fill" data-timeline-fill></div>
+${(UE.zeitleiste || []).map(e => `          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">${esc(e.jahr)}</div>
+            <div class="timeline__body">
+              <h3>${esc(e.titel)}</h3>
+              <p>${esc(e.text)}</p>
+            </div>
+          </div>`).join('\n')}
+        </div>`;
+
+/* ---------- Angebote (Startseite) ---------- */
+const deDatum = d => { const [y, m, t] = String(d).split('-'); return t + '.' + m + '.' + y; };
+function angebot() {
+  const heute = new Date().toISOString().slice(0, 10);
+  const liste = (AN.angebote || []).filter(a => a && a.titel && (!a.gueltig_bis || a.gueltig_bis >= heute));
+  if (!liste.length) return '';
+  return `<section class="angebote" data-angebote style="padding:56px 0 0;">
+    <div class="container">
+${liste.map(a => {
+    const bis = a.gueltig_bis ? 'bis ' + deDatum(a.gueltig_bis) : '';
+    const ab = a.gueltig_von && a.gueltig_von > heute ? 'ab ' + deDatum(a.gueltig_von) + (bis ? ' ' : '') : '';
+    return `      <article class="angebot"${a.gueltig_von ? ' data-von="' + esc(a.gueltig_von) + '"' : ''}${a.gueltig_bis ? ' data-bis="' + esc(a.gueltig_bis) + '"' : ''}>
+        <span class="angebot__label">Angebot</span>
+        <div class="angebot__body">
+          <h2>${esc(a.titel)}</h2>
+          ${a.text ? '<p>' + esc(a.text) + '</p>' : ''}
+        </div>
+        <div class="angebot__side">
+          ${a.preis ? '<span class="angebot__preis">' + esc(a.preis) + '</span>' : ''}
+          ${ab + bis ? '<span class="angebot__zeit">' + esc((ab + bis).trim()) + '</span>' : ''}
+        </div>
+      </article>`;
+  }).join('\n')}
+    </div>
+  </section>`;
+}
+
 /* ---------- Zusammensetzen ---------- */
 const BLOECKE = {
-  hero, woche,
+  hero, woche, angebot, 'ueber-foto': ueberFoto, zeitleiste,
   zeiten: (a, b) => zeiten(a, b),
   kurz: (a, b) => kurz(a, b),
   'cafe-kopf': cafeKopf, 'cafe-menue': cafeMenue,
@@ -120,7 +189,7 @@ function kopieren(von, nach) {
     if (von === ROOT && SKIP.has(e.name)) continue;
     const a = path.join(von, e.name), b = path.join(nach, e.name);
     if (e.isDirectory()) { fs.mkdirSync(b, { recursive: true }); kopieren(a, b); }
-    else if (e.name.endsWith('.html')) fs.writeFileSync(b, render(fs.readFileSync(a, 'utf8'), e.name));
+    else if (e.name.endsWith('.html')) fs.writeFileSync(b, tokens(render(fs.readFileSync(a, 'utf8'), e.name)));
     else fs.copyFileSync(a, b);
   }
 }

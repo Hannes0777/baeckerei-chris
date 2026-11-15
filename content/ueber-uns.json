@@ -1,0 +1,12 @@
+{
+  "titel": "Vom Familienbetrieb Lochmann zu Bäcker Chris",
+  "foto": "",
+  "foto_alt": "Christian und Tina Schiefer in der Bäckerei",
+  "zeitleiste": [
+    { "jahr": "3 Generationen", "titel": "Familie Lochmann", "text": "Die Bäckerei in der Welzheimer Straße wird über drei Generationen von der Familie Lochmann geführt, zuletzt von Klaus Lochmann – familiengeführtes Handwerk mit Wurzeln in der Region." },
+    { "jahr": "22. Januar 2023", "titel": "Übernahme durch Christian & Tina Schiefer", "text": "Bäcker Chris eröffnet: der Start in die Selbstständigkeit, mit demselben Grundsatz wie zuvor – der Teig bekommt genügend Zeit." },
+    { "jahr": "2023", "titel": "Neustart nach dem Hausbrand", "text": "Noch im ersten Jahr brennt es im eigenen Wohnhaus der Familie. Die Schiefers lassen sich davon nicht aufhalten." },
+    { "jahr": "2024", "titel": "Fest etabliert in Rudersberg", "text": "Chris muss seinen Kunden nicht mehr erklären, was anders ist als beim Vorgänger. Er ist einfach „der Bäcker neben dem Kino\"." },
+    { "jahr": "9. Mai 2026", "titel": "Eröffnung Café am Pflegecampus", "text": "Der nächste Schritt: ein Ort für Frühstück, Brunch und Mittagessen, ganz bewusst als „Ort für alle\" gedacht, direkt angebunden an die neue Pflegeeinrichtung in Rudersberg." }
+  ]
+}
