@@ -1,0 +1,132 @@
+# ============================================================
+#  Sveltia CMS – Konfiguration für Bäcker Chris
+#  Bearbeitet werden JSON-Dateien im Ordner /content/.
+#  Nach dem Speichern baut GitHub Actions die Seite neu (ca. 1–2 Minuten).
+# ============================================================
+
+backend:
+  name: github
+  repo: Hannes0777/baeckerei-chris
+  branch: master
+  # Eigener Login-Worker nur für diese Website (E-Mail/Passwort, kein GitHub-Konto nötig)
+  base_url: https://cms-auth-baeckerei-chris.ehmann-hannes07.workers.dev
+
+# Bilder landen in assets/images/uploads
+media_folder: assets/images/uploads
+public_folder: assets/images/uploads
+
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+
+locale: de
+
+collections:
+
+  # ----------------------------------------------------------
+  - name: start
+    label: "🏠 Startseite"
+    files:
+      - name: start
+        label: "Startseite bearbeiten"
+        file: content/start.json
+        fields:
+          - { name: titel_oben, label: "Große Überschrift: erste Zeile", widget: string }
+          - { name: titel_betont, label: "Große Überschrift: zweite Zeile (hervorgehoben)", widget: string }
+          - { name: text, label: "Text unter der Überschrift", widget: text }
+          - name: woche
+            label: "Kasten „Neu diese Woche“"
+            widget: object
+            hint: "Ideal für Sonderbrote, Saisongebäck oder Aktionen der Woche."
+            fields:
+              - { name: anzeigen, label: "Kasten auf der Startseite zeigen", widget: boolean, default: true }
+              - { name: etikett, label: "Kleines Etikett", widget: string, hint: "z.B. Neu diese Woche, Nur am Wochenende" }
+              - { name: titel, label: "Überschrift", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: bild, label: "Hintergrundbild", widget: image, required: false }
+
+  # ----------------------------------------------------------
+  - name: sortiment
+    label: "🥖 Sortiment"
+    files:
+      - name: sortiment
+        label: "Sortiment und Café-Menü"
+        file: content/sortiment.json
+        fields:
+          - { name: cafe_titel, label: "Café: Überschrift", widget: string }
+          - { name: cafe_text, label: "Café: Text darunter", widget: text }
+          - name: cafe_menue
+            label: "Café-Menü"
+            label_singular: "Menüpunkt"
+            widget: list
+            summary: "{{name}}"
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: beschreibung, label: "Beschreibung", widget: string }
+          - { name: cafe_zusatz, label: "Café: Hinweis unter dem Menü (optional)", widget: string, required: false }
+          - name: kategorien
+            label: "Brot- und Backwaren-Kategorien"
+            label_singular: "Kategorie"
+            widget: list
+            summary: "{{titel}}"
+            hint: "Die Reihenfolge lässt sich per Ziehen ändern. Die Kategorien erscheinen abwechselnd hell und dunkel."
+            fields:
+              - { name: titel, label: "Überschrift", widget: string, hint: "z.B. Dinkelbrote" }
+              - { name: kurzname, label: "Kurzname für das Menü oben", widget: string, hint: "z.B. Dinkelbrote" }
+              - { name: anker, label: "Sprung-Ziel (nicht ändern)", widget: string, required: false, hint: "Wird für Links von der Startseite gebraucht. Bei neuen Kategorien einfach leer lassen." }
+              - { name: text, label: "Kurzer Text unter der Überschrift", widget: string, required: false }
+              - { name: bild, label: "Bild", widget: image }
+              - { name: bild_alt, label: "Bild beschreiben (für Sehbehinderte und Google)", widget: string, required: false }
+              - name: produkte
+                label: "Produkte"
+                label_singular: "Produkt"
+                widget: list
+                summary: "{{name}}"
+                fields:
+                  - { name: name, label: "Name", widget: string, hint: "z.B. Saatenkracher" }
+                  - { name: beschreibung, label: "Beschreibung", widget: string }
+                  - { name: hinweis, label: "Kleines Etikett (optional)", widget: string, required: false, hint: "z.B. Bestseller, Saisonal, Neu" }
+              - { name: zusatz, label: "Hinweis unter den Produkten (optional)", widget: string, required: false }
+
+  # ----------------------------------------------------------
+  - name: oeffnungszeiten
+    label: "🕒 Öffnungszeiten"
+    files:
+      - name: oeffnungszeiten
+        label: "Öffnungszeiten beider Standorte"
+        file: content/oeffnungszeiten.json
+        fields:
+          - name: baeckerei
+            label: "Bäckerei Welzheimer Straße"
+            widget: object
+            fields:
+              - name: oeffnungszeiten
+                label: "Öffnungszeiten"
+                label_singular: "Zeile"
+                widget: list
+                required: false
+                summary: "{{tage}}: {{zeit}}"
+                fields:
+                  - { name: tage, label: "Tage", widget: string, hint: "z.B. Montag – Freitag" }
+                  - { name: zeit, label: "Uhrzeit", widget: string, hint: "z.B. 6:00 – 13:00 Uhr oder geschlossen" }
+              - { name: hinweis, label: "Hinweis (optional)", widget: string, required: false, hint: "z.B. Am 24.12. nur bis 11 Uhr geöffnet" }
+          - name: cafe
+            label: "Café am Pflegecampus"
+            widget: object
+            fields:
+              - name: oeffnungszeiten
+                label: "Öffnungszeiten"
+                label_singular: "Zeile"
+                widget: list
+                required: false
+                summary: "{{tage}}: {{zeit}}"
+                fields:
+                  - { name: tage, label: "Tage", widget: string }
+                  - { name: zeit, label: "Uhrzeit", widget: string }
+              - { name: hinweis, label: "Hinweis (optional)", widget: string, required: false }

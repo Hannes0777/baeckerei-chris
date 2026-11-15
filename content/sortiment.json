@@ -1,0 +1,233 @@
+{
+  "cafe_titel": "Frühstück, Brunch & Mittagessen",
+  "cafe_text": "Im neuen Café: gemütlich, hell und offen für alle Generationen.",
+  "cafe_menue": [
+    {
+      "name": "Frühstück",
+      "beschreibung": "Der entspannte Start in den Tag, herzhaft bis süß."
+    },
+    {
+      "name": "Brunch",
+      "beschreibung": "Zeit zum Verweilen, am Wochenende besonders beliebt."
+    },
+    {
+      "name": "Mittagessen & Kaffee",
+      "beschreibung": "Kleine Mittagskarte plus Kaffeespezialitäten."
+    }
+  ],
+  "cafe_zusatz": "Bäcker Chris ist Too-Good-To-Go-Partner: Backwaren vom Vortag gibt's günstig als Retter-Tüte.",
+  "kategorien": [
+    {
+      "titel": "Bauern- und Landbrote",
+      "kurzname": "Bauern- & Landbrote",
+      "anker": "bauern-landbrote",
+      "text": "Lange Teigführung, kräftige Kruste. „Der Teig bekommt genügend Zeit\", dieses Versprechen steckt in jedem Laib.",
+      "bild": "assets/images/stock/bauernland.webp",
+      "bild_alt": "Rustikaler Brotlaib mit Blattmuster (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Landbrot",
+          "hinweis": "",
+          "beschreibung": "Rustikal und kräftig ausgebacken, mit dicker Kruste für langen Genuss."
+        },
+        {
+          "name": "Hausbrot",
+          "hinweis": "",
+          "beschreibung": "Der tägliche Klassiker für den Brotkorb, mild und vielseitig."
+        },
+        {
+          "name": "Bauernbrot",
+          "hinweis": "",
+          "beschreibung": "Herzhaft und würzig, klassisch rund gebacken nach altem Rezept."
+        },
+        {
+          "name": "Genetzes",
+          "hinweis": "",
+          "beschreibung": "Vor dem Backen genetzt, für die charakteristische Musterkruste. 500 g und 1 kg."
+        },
+        {
+          "name": "Roggenbauernbrot",
+          "hinweis": "",
+          "beschreibung": "Kräftiger Roggenanteil für würzigen Geschmack. 750 g und 1 kg."
+        }
+      ],
+      "zusatz": ""
+    },
+    {
+      "titel": "Dinkelbrote",
+      "kurzname": "Dinkelbrote",
+      "anker": "dinkelbrote",
+      "text": "Für den vollen Geschmack.",
+      "bild": "assets/images/stock/dinkel.webp",
+      "bild_alt": "Rustikale Brotlaibe auf Leinen (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Dinkelvollkorn",
+          "hinweis": "",
+          "beschreibung": "100 % Dinkel, fein im Geschmack und leicht bekömmlich."
+        },
+        {
+          "name": "Dinkel Gourmet",
+          "hinweis": "",
+          "beschreibung": "Helle Krume mit zartem Dinkelaroma, für den täglichen Genuss."
+        },
+        {
+          "name": "Dinkelbauern",
+          "hinweis": "",
+          "beschreibung": "Kräftige Kruste, milder Kern – die Dinkel-Variante des Bauernbrots."
+        },
+        {
+          "name": "Dunkles Dinkelvollkorn",
+          "hinweis": "",
+          "beschreibung": "Kräftiger als das helle Vollkorn, mit dunkler Kruste."
+        },
+        {
+          "name": "Alpenlaib aus Dinkel Ruch Mehl",
+          "hinweis": "",
+          "beschreibung": "Aus grob vermahlenem Ruchmehl, rustikal und aromatisch."
+        },
+        {
+          "name": "Buttermilch Laib",
+          "hinweis": "",
+          "beschreibung": "Mit Buttermilch verfeinert, für eine besonders saftige Krume."
+        }
+      ],
+      "zusatz": ""
+    },
+    {
+      "titel": "Kern- und Saatenbrote",
+      "kurzname": "Kern- & Saatenbrote",
+      "anker": "kern-saatenbrote",
+      "text": "Kräftig, mit viel Biss.",
+      "bild": "assets/images/stock/kernsaaten.webp",
+      "bild_alt": "Geschnittenes Kornbrot (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Saatenkracher",
+          "hinweis": "Bestseller",
+          "beschreibung": "Mit Quellstück und reichlich Sonnenblumen-, Kürbis- und Leinsaat."
+        },
+        {
+          "name": "Emmer Urkorn",
+          "hinweis": "",
+          "beschreibung": "Aus dem Urgetreide Emmer, nussig im Geschmack und bekömmlich."
+        },
+        {
+          "name": "Dreikorn",
+          "hinweis": "",
+          "beschreibung": "Weizen, Roggen und Dinkel in einem Laib – ausgewogen und kräftig."
+        },
+        {
+          "name": "Sechskorn",
+          "hinweis": "",
+          "beschreibung": "Sechs Getreidesorten für ein besonders sättigendes Vollkornbrot."
+        }
+      ],
+      "zusatz": ""
+    },
+    {
+      "titel": "Spezialbrote",
+      "kurzname": "Spezialbrote",
+      "anker": "spezialbrote",
+      "text": "Für besondere Ansprüche.",
+      "bild": "assets/images/stock/spezial.webp",
+      "bild_alt": "Frisch gebackenes Sauerteigbrot (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Sauerteigbrot",
+          "hinweis": "",
+          "beschreibung": "Rein mit Sauerteig geführt, für ausgeprägtes Aroma und lange Frische."
+        },
+        {
+          "name": "Protein Brot",
+          "hinweis": "",
+          "beschreibung": "Eiweißreich und sättigend, für erhöhten Proteinbedarf."
+        },
+        {
+          "name": "Chiabatta",
+          "hinweis": "",
+          "beschreibung": "Unsere Ciabatta-Variante, luftig-locker mit knuspriger Kruste."
+        }
+      ],
+      "zusatz": ""
+    },
+    {
+      "titel": "Baguettes",
+      "kurzname": "Baguettes",
+      "anker": "baguettes",
+      "text": "Knusprig aus Dinkel und Weizen.",
+      "bild": "assets/images/stock/baguette.webp",
+      "bild_alt": "Zwei Baguettes auf einem Tablett (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Baguette Dinkel & Weizen",
+          "hinweis": "",
+          "beschreibung": "Klassisch französisch, aus Dinkel und Weizen knusprig gebacken."
+        },
+        {
+          "name": "Baguette Körner",
+          "hinweis": "",
+          "beschreibung": "Mit Körnern verfeinert, für mehr Biss und Geschmack."
+        },
+        {
+          "name": "Baguette Pfeffer",
+          "hinweis": "",
+          "beschreibung": "Mit Pfeffer gewürzt, für den kräftigen Auftritt auf dem Brotteller."
+        }
+      ],
+      "zusatz": "Dazu Zwiebelbrot, Brötchen & Semmeln, frisch jeden Morgen."
+    },
+    {
+      "titel": "Brezeln: das Aushängeschild",
+      "kurzname": "Brezeln",
+      "anker": "brezeln",
+      "text": "Klassisch schwäbisch gelaugt, mit saisonalen Sondereditionen.",
+      "bild": "assets/images/stock/brezeln.webp",
+      "bild_alt": "Frische Laugenbrezel (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Butterbrezel",
+          "hinweis": "Klassiker",
+          "beschreibung": "Frisch, warm und mit ordentlich Butter."
+        },
+        {
+          "name": "Neujahrsbrezel",
+          "hinweis": "Saisonal",
+          "beschreibung": "Die beliebte Sonderedition zum Jahreswechsel."
+        },
+        {
+          "name": "Laugengebäck",
+          "hinweis": "",
+          "beschreibung": "Laugenstangen und -brötchen für die herzhafte Pause."
+        }
+      ],
+      "zusatz": ""
+    },
+    {
+      "titel": "Süßes und Kuchen",
+      "kurzname": "Süßes & Kuchen",
+      "anker": "suesses-kuchen",
+      "text": "Für Kaffeetafel und spontanen Heißhunger.",
+      "bild": "assets/images/stock/kuchen.webp",
+      "bild_alt": "Tortenstück auf einem Teller (Symbolfoto)",
+      "produkte": [
+        {
+          "name": "Süße Teilchen",
+          "hinweis": "",
+          "beschreibung": "Plunder, Hörnchen & Co., perfekt zum Frühstück."
+        },
+        {
+          "name": "Kuchen vom Blech",
+          "hinweis": "",
+          "beschreibung": "Klassiker für die Kaffeetafel, nach Saison wechselnd."
+        },
+        {
+          "name": "Torten",
+          "hinweis": "",
+          "beschreibung": "Für Geburtstag & Familienfeier, auf Anfrage."
+        }
+      ],
+      "zusatz": ""
+    }
+  ]
+}

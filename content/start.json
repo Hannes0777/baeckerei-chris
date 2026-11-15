@@ -1,0 +1,12 @@
+{
+  "titel_oben": "Frisch gebacken,",
+  "titel_betont": "jeden Morgen.",
+  "text": "Sauerteig, Zeit und echtes Handwerk. Bei uns entsteht Brot noch so, wie es entstehen soll – und gleich zwei Orte, an denen man gerne sitzen bleibt.",
+  "woche": {
+    "anzeigen": true,
+    "etikett": "Neu diese Woche",
+    "titel": "Saisonales & Sonderbrote",
+    "text": "Neben dem festen Sortiment gibt es wöchentlich wechselnde Sonderbrote und Saisongebäck wie die Neujahrsbrezel – am besten kurz vorher in der Bäckerei oder auf Instagram nachfragen, was gerade aus dem Ofen kommt.",
+    "bild": "assets/images/stock/spezial.webp"
+  }
+}

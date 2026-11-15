@@ -1,0 +1,23 @@
+{
+  "baeckerei": {
+    "oeffnungszeiten": [
+      {
+        "tage": "Montag – Freitag",
+        "zeit": "6:00 – 13:00 Uhr"
+      },
+      {
+        "tage": "Samstag",
+        "zeit": "6:00 – 12:00 Uhr"
+      },
+      {
+        "tage": "Sonntag",
+        "zeit": "7:30 – 10:00 Uhr"
+      }
+    ],
+    "hinweis": ""
+  },
+  "cafe": {
+    "oeffnungszeiten": [],
+    "hinweis": "Öffnungszeiten stehen noch nicht öffentlich fest."
+  }
+}
