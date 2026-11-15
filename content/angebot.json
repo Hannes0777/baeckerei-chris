@@ -1,3 +1,11 @@
 {
-  "angebote": []
+  "angebote": [
+    {
+      "titel": "TEST",
+      "text": "",
+      "preis": "",
+      "gueltig_von": "2026-11-15",
+      "gueltig_bis": "2026-11-16"
+    }
+  ]
 }
