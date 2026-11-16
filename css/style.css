@@ -905,15 +905,15 @@ section[id] { scroll-margin-top: 140px; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 /* ---------- Angebot auf der Startseite (CMS) ---------- */
-.angebot { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 10px 36px; align-items: center; padding: 38px 44px 38px 52px; background: var(--green); color: var(--text-on-dark); border-left: 12px solid var(--angebot-rot); box-shadow: var(--shadow-md); --angebot-rot: #d4331f; }
+.angebot { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 10px 36px; align-items: center; padding: 38px 44px 38px 52px; background: var(--angebot-rot); color: #fff; border-left: 12px solid var(--gold); box-shadow: var(--shadow-md); --angebot-rot: #d4331f; }
 .angebot + .angebot { margin-top: 20px; }
-.angebot__label { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--angebot-rot); padding: 9px 16px; transform: rotate(-3deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
-.angebot__body h2 { font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.02; color: var(--text-on-dark); margin: 0 0 10px; }
-.angebot__body p { margin: 0; font-size: 1.1rem; color: var(--text-on-dark-light); max-width: 56ch; }
+.angebot__label { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); background: var(--gold); padding: 9px 16px; transform: rotate(-3deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
+.angebot__body h2 { font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.02; color: #fff; margin: 0 0 10px; }
+.angebot__body p { margin: 0; font-size: 1.1rem; color: #ffe9e4; max-width: 56ch; }
 .angebot__side { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.angebot__preis { position: relative; font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; color: #fff; background: var(--angebot-rot); padding: 16px 26px 16px 40px; transform: rotate(2deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
-.angebot__preis::before { content: ""; position: absolute; left: 12px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--green); }
-.angebot__zeit { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: var(--gold-light); }
+.angebot__preis { position: relative; font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; color: var(--angebot-rot); background: var(--cream); padding: 16px 26px 16px 40px; transform: rotate(2deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
+.angebot__preis::before { content: ""; position: absolute; left: 12px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--angebot-rot); }
+.angebot__zeit { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: #fff; }
 @media (max-width: 720px) {
   .angebot { grid-template-columns: 1fr; padding: 28px 22px 28px 26px; border-left-width: 8px; gap: 16px; }
   .angebot__label { justify-self: start; }
