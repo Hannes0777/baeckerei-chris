@@ -1,4 +1,4 @@
-/* ============ Tokens ============ */
+﻿/* ============ Tokens ============ */
 :root {
   --green: #1f3d2c;
   --green-light: #2f5741;
@@ -581,7 +581,7 @@ section { padding: 0; }
 }
 @media (max-width: 700px) { .testimonial-card { width: 280px; } }
 
-/* ============ Scroll-Timeline (Über-uns-Teaser, Startseite) ============ */
+/* ============ Scroll-Timeline (Ãœber-uns-Teaser, Startseite) ============ */
 .about-sticky { position: sticky; top: 120px; align-self: start; }
 .timeline { position: relative; }
 .timeline__item { position: relative; padding-left: 56px; padding-bottom: 44px; }
@@ -723,7 +723,7 @@ section[id] { scroll-margin-top: 140px; }
   .zigzag-row.reverse .zigzag-media, .zigzag-row.reverse .zigzag-text { order: 0; }
 }
 
-/* ============ Bento (café moment photography) ============ */
+/* ============ Bento (cafÃ© moment photography) ============ */
 .bento { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: auto auto; gap: 12px; margin-top: 8px; }
 .bento__lg { grid-row: span 2; aspect-ratio: 4/5; overflow: hidden; }
 .bento__sm { aspect-ratio: 4/3; overflow: hidden; }
@@ -905,15 +905,19 @@ section[id] { scroll-margin-top: 140px; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 /* ---------- Angebot auf der Startseite (CMS) ---------- */
-.angebot { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 10px 36px; align-items: center; padding: 38px 44px 38px 52px; background: var(--angebot-rot); color: #fff; border-left: 12px solid var(--gold); box-shadow: var(--shadow-md); --angebot-rot: #d4331f; }
+.angebot { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 10px 36px; align-items: center; padding: 38px 44px 38px 52px; background: var(--green-dark); color: var(--text-on-dark); border-left: 12px solid var(--angebot-rot); overflow: hidden; box-shadow: var(--shadow-md); --angebot-rot: #d4331f; }
+.angebot__bg { position: absolute; inset: 0; z-index: 0; }
+.angebot__bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(3px); transform: scale(1.08); }
+.angebot__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, rgba(23,48,31,0.88) 30%, rgba(23,48,31,0.62) 70%, rgba(23,48,31,0.42) 100%); }
+.angebot > :not(.angebot__bg) { position: relative; z-index: 1; }
 .angebot + .angebot { margin-top: 20px; }
-.angebot__label { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); background: var(--gold); padding: 9px 16px; transform: rotate(-3deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
-.angebot__body h2 { font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.02; color: #fff; margin: 0 0 10px; }
-.angebot__body p { margin: 0; font-size: 1.1rem; color: #ffe9e4; max-width: 56ch; }
+.angebot__label { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--angebot-rot); padding: 9px 16px; transform: rotate(-3deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
+.angebot__body h2 { font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.02; color: var(--text-on-dark); margin: 0 0 10px; }
+.angebot__body p { margin: 0; font-size: 1.1rem; color: var(--text-on-dark-light); max-width: 56ch; }
 .angebot__side { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.angebot__preis { position: relative; font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; color: var(--angebot-rot); background: var(--cream); padding: 16px 26px 16px 40px; transform: rotate(2deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
-.angebot__preis::before { content: ""; position: absolute; left: 12px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--angebot-rot); }
-.angebot__zeit { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: #fff; }
+.angebot__preis { position: relative; font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; color: #fff; background: var(--angebot-rot); padding: 16px 26px 16px 40px; transform: rotate(2deg); box-shadow: 3px 3px 0 rgba(0,0,0,0.25); }
+.angebot__preis::before { content: ""; position: absolute; left: 12px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--green-dark); }
+.angebot__zeit { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: var(--gold-light); }
 @media (max-width: 720px) {
   .angebot { grid-template-columns: 1fr; padding: 28px 22px 28px 26px; border-left-width: 8px; gap: 16px; }
   .angebot__label { justify-self: start; }

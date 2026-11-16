@@ -152,6 +152,7 @@ ${liste.map(a => {
     const bis = a.gueltig_bis ? 'bis ' + deDatum(a.gueltig_bis) : '';
     const ab = a.gueltig_von && a.gueltig_von > heute ? 'ab ' + deDatum(a.gueltig_von) + (bis ? ' ' : '') : '';
     return `      <article class="angebot"${a.gueltig_von ? ' data-von="' + esc(a.gueltig_von) + '"' : ''}${a.gueltig_bis ? ' data-bis="' + esc(a.gueltig_bis) + '"' : ''}>
+        <div class="angebot__bg"><img src="assets/images/stock/dinkel.webp" alt="" width="900" height="600" loading="lazy"></div>
         <span class="angebot__label">Angebot</span>
         <div class="angebot__body">
           <h2>${esc(a.titel)}</h2>
