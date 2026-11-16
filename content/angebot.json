@@ -1,3 +1,11 @@
 {
-  "angebote": []
+  "angebote": [
+    {
+      "titel": "Dinkelbrot zum Probierpreis",
+      "text": "Nur solange der Vorrat reicht",
+      "preis": "3,90 €",
+      "gueltig_von": "2026-11-16",
+      "gueltig_bis": "2026-11-30"
+    }
+  ]
 }
